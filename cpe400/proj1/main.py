@@ -24,50 +24,65 @@ class simulation():
 		self._inbox = []
 
 	#FUNCTIONS
-	def stopAndGoTrip():
-		if sendPacket():
-			#if packet is not in inbox
-				#copy a packet into inbox
-			#send ACK
-			if sendACK():
-				#place an ack in the ackbox
-		else if self._queue.count == 0:
+	def stopAndGoTrip(self):
+		#no more packets to be sent		
+		if not self._queue:
 			self._flag = True
+		#send packet
+		elif self.sendPacket(self._queue[0]):
+			#send ACK if packet doesn't fail
+			self.sendACK(self._queue[0])
 		
-	def isSuccess():
+		
+	def isSuccess(self):
 		chance = random.randint(0,10)
 		if chance < 10 * self._error:
 			return False
 		else:
 			return True
-	#RECEIVER
-	def sendACK():
-		return isSuccess()
-	#SENDER
-	def sendPacket():
-		cleanAckBox()
-		return isSucess
 
-	def cleanAckBox():
+	#RECEIVER
+	def sendACK(self, p):
+		if self.isSuccess():
+			#place an ack in the ackbox
+			self._ackbox.append(p)
+			return True
 		return False
 
-
-				
-
-#RECEIVER CLASS
-class receiver():
-	def __init__(self):
-		self._inbox = []
-
-	def sendACK(p):
-		chance = random.randint(0,10)
-		if chance < 10 * self._error:
+	#SENDER
+	def sendPacket(self, p):
+		self.cleanAckBox() #clean up queue based on the Acks in the ackbox
+		if not self._queue:
 			return False
-		else:
+		if self.isSuccess():
+			#if packet is not in inbox
+			if not filter(lambda x: x.id == p.id, self._inbox):
+				#copy a packet into inbox
+				self._inbox.append(p)
 			return True
+		return False
+
+	def cleanAckBox(self):
+		if not self._ackbox:
+			return 0
+		#foreach acknowledgement in the ack box
+		for ack in self._ackbox:
+			#find the corresponding packet in the queue and remove it from the queue
+			try:
+				self._queue.remove(ack)
+			except:
+				print('Tried removing a packet that didn\'t exist.')
+					
+		#clear ackbox
+		self._ackbox.clear()
+		return 0
+
 		
 #PACKET CLASS
 class packet():
+	def __eq__(self, other):
+		return self.id == other.id
+
 	def __init__(self, packid):
 		#generate 24 random binary int32 to simulate 100bytes 
 		#(24 random ints * 32bit + One int id (32bit) = 100bytes) 
@@ -83,8 +98,9 @@ def main():
 	simulations = [simulation(0.0),simulation(0.1),simulation(0.2),simulation(0.3),simulation(0.4),simulation(0.5)]
 	#while there are still packets to be sent
 	for sim in simulations:
-		while sim._flag == False:
-			#call algorithm function for stop n go
+		while not sim._flag:
+			#call algorithm function for stop n' go
+			sim.stopAndGoTrip()
 			sim._flag = True
 
 	#output graph to screen
