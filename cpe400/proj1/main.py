@@ -4,58 +4,57 @@
 #CPE 400 Project 1
 import random
 #classes
-class mailbox():
-	def __init__(self, queueFlag = False):
-		self._flag = False #this is the flag that indicates there is mail
-		self._inbox = []
-		self._queue = []
-		if queueFlag: #generate 100 packets of 100bytes each
-			i = 0
-			while(i < 100):
-				tempPacket = packet(i)
-				self._queue.append(tempPacket)
-				i += 1
+class simulation():
+	def __init__(self, errorRate):
+		self._flag = False #this is the flag that indicates that all packets have been sent
+		self._sendHandshake = False
+		self._recHandshake = False
+		self._inbox = [] #where the receiver looks for packets
+		self._ackbox = [] #where the sender receives acknowledgements
+		self._queue = [] #where the packets that need to be sent live 
+		self._timer = 0;
+		self._rtt = random.randint(10,50) #random 10-50ms
+		self._timeout = 45; #ms
+		self._error = errorRate
+		i = 0
+		while(i < 100):
+			tempPacket = packet(i)
+			self._queue.append(tempPacket)
+			i += 1
+
 class packet():
 	def __init__(self, packid):
 		#generate 24 random binary int32 to simulate 100bytes 
-		#(32bit * 24 + One 23bit id = 100bytes) 
+		#(24 random ints * 32bit + One int id (32bit) = 100bytes) 
 		self.data = []
 		i = 0
 		while i < 24:
-			self.data.append(random.randrange(10))
+			self.data.append(random.randint(0,65535))
 			i += 1
 		self.id = packid
 #main
 def main():	
-	#initialize mailbox
-	Server = mailbox(False)
-	Client = mailbox(True)
-	for p in Client._queue:
-		print('{} ID:{}'.format(p.data, p.id))
-	#initialize 100byte example packets
+	#initialize simulations for Stop and Wait
+	simulations = [simulation(0.0),simulation(0.1),simulation(0.2),simulation(0.3),simulation(0.4),simulation(0.5)]
+	#while there are still packets to be sent
+	for sim in simulations:
+		while sim._flag == False:
+			#call algorithm function for stop n go
+			stopAndWait(sim)
+			sim._flag = True
 
-	#fork into two processes
-	
-	#child process, call client function
-	
-	#parent process, call server function -> ouput terminal w/ graph and file
+	#output graph to screen
 	
 #functions
-def IsEven(n):
-	if n % 2 == 0:
-		return True
-	else:
-		return False
+def stopAndWait(sim):
+	sender(sim)
+	receiver(sim)
 
-def IsPrime(n):
-	if n == 1: return False
-	for x in range(2, n):
-		if n % x == 0: return False
-	else:
-		return True
+def sender(sim):
+	print('a')
 
-def CountToNextPrime(n = 1):
-	while(True):
-		if IsPrime(n): yield n
-		n+=1
+def receiver(sim):
+	print('b')
+
+
 if __name__ == "__main__": main()
