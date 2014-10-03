@@ -5,7 +5,6 @@
 import random
 import os
 import matplotlib.pyplot as plt
-import numpy as np
 #SIMULATOR CLASS
 class simulation():
 	def __init__(self, errorRate):
@@ -35,8 +34,13 @@ class simulation():
 			self._flag = True
 		#send packet
 		elif self.sendPacket(self._queue[0]):
-			#send ACK if packet doesn't fail
-			self.sendACK(self._queue[0])
+			#send ACK if packet doesn't fail (timer is handled inside ack
+			if self.sendACK(self._queue[0]):
+				#it was a success so our rtt is a random value between 10 and 50.
+				self._timer += random.randint(10,50)
+			else:
+				#it failed so we wait the entire rtt
+				self._timer += self._timeout
 		else:
 			#it failed so we wait the entire timeout period
 			self._timer += self._timeout
@@ -51,13 +55,9 @@ class simulation():
 	#RECEIVER
 	def sendACK(self, p):
 		if self.isSuccess():
-			#it was a success so our rtt is a random value between 10 and 50.
-			self._timer += random.randint(10,50)
 			#place an ack in the ackbox
 			self._ackbox.append(p)
 			return True
-		#it failed so we wait the entire rtt
-		self._timer += self._timeout
 		return False
 
 	#SENDER
