@@ -5,11 +5,13 @@
 import random
 import os
 import matplotlib.pyplot as plt
+
 #SIMULATOR CLASS
 class simulation():
 	def __init__(self, errorRate, windowSize = 1):
 		#TOTALS
 		self._totalThroughput = 0
+		self._cycles = 0
 		#MEMBERS		
 		self._flag = False #this is the flag that indicates that all packets have been sent
 		self._timer = 0;
@@ -27,6 +29,35 @@ class simulation():
 		#RECEIVER
 		self._inbox = []
 
+	#SELECTIVE REPEAT
+	def selectiveRepeat(self):
+		#no more packets to be sent		
+		if not self._queue:
+			self._totalThroughput = self._timer
+			self._flag = True
+			return self._flag
+		#send packets within the window size
+		i = 1
+		sequenceNumber = 0
+		for n in list(range(self._winSize)):
+			try:
+				if self.sendPacket(self._queue[sequenceNumber]):
+					#send ACK if packet doesn't fail
+					if not self.sendACK(self._queue[sequenceNumber]): i-=1#it failed- wait the entire rtt
+				else: i -= 1 #it failed- wait the entire rtt
+				i+=1
+				self._cycles += 1
+			except:
+				break
+			sequenceNumber += 1
+		#All packets were successful
+		if i > self._winSize or not self._queue:
+			self._timer += random.randint(10,50)
+		#A packet was lost
+		else:
+			self._timer += self._timeout
+		return self._flag
+
 	#GO BACK N
 	def goBackNTrip(self):
 		#no more packets to be sent		
@@ -41,14 +72,15 @@ class simulation():
 				if self.sendPacket(self._queue[0]):
 					#send ACK if packet doesn't fail
 					if not self.sendACK(self._queue[0]):
-						#it failed to be sent so we wait the entire rtt
+						#it failed- wait the entire rtt
 						#ignore the rest of the packets sent we failed on ack
 						break
 				else:
-					#it failed to be sent so we wait the entire rtt
+					#it failed- wait the entire rtt
 					#ignore the rest of the packets because we failed
 					break
 				i+=1
+				self._cycles += 1
 		#All packets were successful
 		if i > self._winSize or not self._queue:
 			self._timer += random.randint(10,50)
@@ -59,6 +91,7 @@ class simulation():
 
 	#STOP AND GO
 	def stopAndGoTrip(self):
+		self._cycles += 1
 		#no more packets to be sent		
 		if not self._queue:
 			self._totalThroughput = self._timer
@@ -141,7 +174,7 @@ class packet():
 def main():	
 	#Number of simulation loops
 	loopcount = 50
-	totalSims = 3
+	totalSims = 5
 
 	#Stop and Go Procedure
 	print('Running simulation 1 of {}...'.format(totalSims))
@@ -154,6 +187,14 @@ def main():
 	#Go Back N with varying Window Sizes
 	print('Running simulation 3 of {}...'.format(totalSims))	
 	simulate(loopcount, 'gbn-win-size', 3)
+	
+	#Selective Repeat with varying Error Rates	
+	print('Running simulation 4 of {}...'.format(totalSims))
+	simulate(loopcount, 'sr-error-rate', 4)
+	
+	#Selective Repeat with varying Window Sizes
+	print('Running simulation 5 of {}...'.format(totalSims))	
+	simulate(loopcount, 'sr-win-size', 5)
 
 	print('Finished simulation.')
 	print('Closing all figures will end the program...')
@@ -188,6 +229,17 @@ def simulate(loopnum, simType, fignum = 1):
 			xLabel = 'Window Size'
 			startX = 0
 			endX = 20
+		
+		elif simType == 'sr-error-rate':
+			title = 'Selective Repeat Comparison: {} simulations per Error Rate; Window Size of 4'.format(loopnum)
+			simulations = [simulation(0.0, 4), simulation(0.1, 4), simulation(0.2, 4), simulation(0.3, 4), simulation(0.4, 4), simulation(0.5, 4)]
+				
+		elif simType == 'sr-win-size':
+			simulations = [simulation(0.2, 4),simulation(0.2, 8),simulation(0.2, 12),simulation(0.2, 16)]
+			title = 'Selective Repeat Comparison: {} simulations per Window Size; Error Rate of 0.2'.format(loopnum)
+			xLabel = 'Window Size'
+			startX = 0
+			endX = 20
 
 		#while there are still packets to be sent
 		for sim in simulations:
@@ -195,6 +247,7 @@ def simulate(loopnum, simType, fignum = 1):
 				#Call Appropriate Algorithm
 				if simType == 'stop-and-go': sim.stopAndGoTrip()
 				elif simType == 'gbn-error-rate' or simType == 'gbn-win-size': sim.goBackNTrip()
+				elif simType == 'sr-error-rate' or simType == 'sr-win-size': sim.selectiveRepeat()
 				else: sim._flag = False#break loop if incorrect simType
 			
 			#update max
@@ -205,11 +258,11 @@ def simulate(loopnum, simType, fignum = 1):
 				minRange = sim._totalThroughput
 			
 			#add point to the list.
-			if simType == 'stop-and-go' or simType == 'gbn-error-rate':
+			if simType == 'stop-and-go' or simType == 'gbn-error-rate' or simType == 'sr-error-rate':
 				xAxis.append(sim._error)
 				yAxis.append(sim._totalThroughput)
 			
-			elif simType == 'gbn-win-size':
+			elif simType == 'gbn-win-size' or simType == 'sr-win-size':
 				xAxis.append(sim._winSize)
 				yAxis.append(sim._totalThroughput)
 
