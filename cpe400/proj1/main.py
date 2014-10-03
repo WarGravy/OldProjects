@@ -27,7 +27,7 @@ class simulation():
 		#RECEIVER
 		self._inbox = []
 
-	#FUNCTIONS
+	#GO BACK N
 	def goBackNTrip(self):
 		#no more packets to be sent		
 		if not self._queue:
@@ -57,6 +57,7 @@ class simulation():
 			self._timer += self._timeout
 		return self._flag
 
+	#STOP AND GO
 	def stopAndGoTrip(self):
 		#no more packets to be sent		
 		if not self._queue:
@@ -74,13 +75,6 @@ class simulation():
 		else:
 			#it failed so we wait the entire timeout period
 			self._timer += self._timeout
-	
-	def isSuccess(self):
-		chance = random.randint(0,10)
-		if chance < 10 * self._error:
-			return False
-		else:
-			return True
 
 	#RECEIVER
 	def sendACK(self, p):
@@ -103,6 +97,15 @@ class simulation():
 			return True
 		return False
 
+	#RANDOM CHANCE OF FAILURE
+	def isSuccess(self):
+		chance = random.randint(0,10)
+		if chance < 10 * self._error:
+			return False
+		else:
+			return True
+
+	#Packet and Ack MAINTENANCE
 	def cleanAckBox(self):
 		if not self._ackbox:
 			return 0
@@ -157,6 +160,7 @@ def main():
 	#show all figures
 	plt.show()
 
+#Simulator
 def simulate(loopnum, simType, fignum = 1):
 	maxRange = 0
 	minRange = 0
