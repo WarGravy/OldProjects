@@ -124,7 +124,7 @@ class simulation():
 			return False
 		if self.isSuccess():
 			#if packet is not in inbox
-			if not filter(lambda x: x.id == p.id, self._inbox):
+			if not filter(lambda x: x.sequenceNumber == p.sequenceNumber, self._inbox):
 				#copy a packet into inbox
 				self._inbox.append(p)
 			return True
@@ -159,7 +159,7 @@ class simulation():
 #PACKET CLASS
 class packet():
 	def __eq__(self, other):
-		return self.id == other.id
+		return self.sequenceNumber == other.sequenceNumber
 
 	def __init__(self, packid):
 		#generate 24 random binary int32 to simulate 100bytes 
@@ -169,7 +169,7 @@ class packet():
 		while i < 24:
 			self.data.append(os.urandom(96))
 			i += 1
-		self.id = packid
+		self.sequenceNumber = packid * 100#the sequence number increases with the size of the packets
 #MAIN
 def main():	
 	#Number of simulation loops
