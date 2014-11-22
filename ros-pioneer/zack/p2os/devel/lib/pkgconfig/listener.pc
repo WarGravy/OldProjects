@@ -1,8 +1,0 @@
-prefix=/home/roslyn/zack/p2os/devel
-
-Name: listener
-Description: Description of listener
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/roslyn/zack/p2os/devel/lib -llib
-Requires: message_runtime geometry_msgs sensor_msgs tf

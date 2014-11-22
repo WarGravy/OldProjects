@@ -1,8 +1,0 @@
-prefix=/home/roslyn/zack/p2os/install
-
-Name: p2os_driver
-Description: Description of p2os_driver
-Version: 1.1.0
-Cflags: -I/home/roslyn/zack/p2os/install/include
-Libs: -L/home/roslyn/zack/p2os/install/lib 
-Requires: message_runtime nav_msgs roscpp geometry_msgs diagnostic_updater tf std_msgs

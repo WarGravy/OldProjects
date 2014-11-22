@@ -1,8 +1,0 @@
-prefix=/home/roslyn/zack/p2os/install
-
-Name: p2os_launch
-Description: Description of p2os_launch
-Version: 1.0.9
-Cflags: 
-Libs: -L/home/roslyn/zack/p2os/install/lib 
-Requires: 

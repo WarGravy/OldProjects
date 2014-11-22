@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "p2os_driver")
-set(p2os_driver_MAINTAINER "Timothy Sweet <timothy.l.sweet@gmail.com>")
-set(p2os_driver_DEPRECATED "")
-set(p2os_driver_VERSION "1.1.0")
-set(p2os_driver_BUILD_DEPENDS "std_msgs" "message_generation" "geometry_msgs" "tf" "roscpp" "nav_msgs" "diagnostic_updater")
-set(p2os_driver_RUN_DEPENDS "diagnostic_updater" "nav_msgs" "tf" "roscpp" "geometry_msgs" "message_runtime" "std_msgs")
-set(p2os_driver_BUILDTOOL_DEPENDS "catkin")
