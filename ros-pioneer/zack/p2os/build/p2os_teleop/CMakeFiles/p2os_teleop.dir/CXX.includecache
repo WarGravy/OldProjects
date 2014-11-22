@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/roslyn/zack/p2os/src/p2os_teleop/src/p2os_teleop.cc
+cstdlib
+-
+unistd.h
+-
+math.h
+-
+ros/ros.h
+/home/roslyn/zack/p2os/src/p2os_teleop/src/ros/ros.h
+sensor_msgs/Joy.h
+/home/roslyn/zack/p2os/src/p2os_teleop/src/sensor_msgs/Joy.h
+geometry_msgs/Twist.h
+/home/roslyn/zack/p2os/src/p2os_teleop/src/geometry_msgs/Twist.h
+

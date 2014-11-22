@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "listener")
+set(listener_MAINTAINER "Zachary Carlson <zackcarlson13@gmail.com>")
+set(listener_DEPRECATED "")
+set(listener_VERSION "0.0.0")
+set(listener_BUILD_DEPENDS "sensor_msgs" "tf" "std_msgs" "message_generation" "geometry_msgs")
+set(listener_RUN_DEPENDS "sensor_msgs" "geometry_msgs" "tf" "message_runtime" "std_msgs")
+set(listener_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,2 @@
+set(p2os_driver_MESSAGE_FILES "/home/roslyn/zack/p2os/src/p2os_driver/msg/AIO.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/BatteryState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/DIO.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/GripperState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/GripState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/LiftState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/MotorState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/PTZState.msg;/home/roslyn/zack/p2os/src/p2os_driver/msg/SonarArray.msg")
+set(p2os_driver_SERVICE_FILES "")
