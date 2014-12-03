@@ -3,15 +3,16 @@
  * Zachary Carlson
  */
 import java.awt.*;
-import javax.swing.*; 
+import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.event.*;
 
+@SuppressWarnings("unchecked")
 public class ColorPicker extends JFrame{
 	
-	protected JButton buttonDone;
-	protected JButton buttonCancel;
-	protected JTextField tfFirstName;
-	protected JTextField tfLastName;
+	protected JButton buttonDone, buttonCancel;
+	protected JTextField tfFirstName, tfLastName;
+	protected JList listColors;
 
 	public static void main(String[] args) {
 		new ColorPicker("Color Picker Application");
@@ -20,10 +21,13 @@ public class ColorPicker extends JFrame{
 	public ColorPicker(String title) 
 	{
 		super(title);		// call constructor of base class
-		setSize(350, 150);
+		setSize(500, 200);
 		//setBounds(100, 100, 250, 100);
 
 		addWindowListener(new WindowDestroyer());
+
+		listColors = new JList();
+		listColors.addListSelectionListener(new ListHandler());
 
 		buttonDone = new JButton("Done");
 		buttonCancel = new JButton("Cancel");
@@ -33,14 +37,17 @@ public class ColorPicker extends JFrame{
 		tfFirstName = new JTextField("");
 		tfLastName = new JTextField("");
 
-		getContentPane().setLayout(new GridLayout(3, 2));
+		getContentPane().setLayout(new GridLayout(5, 2));
 		getContentPane().add(new JLabel("First Name:"));
 		getContentPane().add(tfFirstName);
 		getContentPane().add(new JLabel("Last Name:"));
 		getContentPane().add(tfLastName);
 		getContentPane().add(buttonDone);
 		getContentPane().add(buttonCancel);
-		
+		getContentPane().add(new JScrollPane(listColors));
+
+		String colors[] = {"Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Orange", "Pink", "Grey", "Black", "White"};
+		listColors.setListData(colors);
         tfFirstName.setText("John");
         tfLastName.setText("John");
 
@@ -70,6 +77,20 @@ public class ColorPicker extends JFrame{
 			else if ( e.getSource() == buttonCancel )
 				System.out.println("You pressed the Cancel button.");
 		}
-	}                        
-
+	} 
+	// Define list listener                                       
+	private class ListHandler implements ListSelectionListener 
+	{      
+		public void valueChanged(ListSelectionEvent e)
+		{
+		  if ( e.getSource() == listColors && !e.getValueIsAdjusting() )
+		     {
+				int i = listColors.getSelectedIndex();
+				String s = (String) listColors.getSelectedValue();
+				System.out.println("Position " + i + " selected: " +s);
+		     }
+		 
+		}
+	}
+                       
 }
