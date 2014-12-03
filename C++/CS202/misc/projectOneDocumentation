@@ -1,0 +1,9 @@
+Zachary Carlson
+Project One
+CS202
+September 6, 2012
+
+
+So my code needs a lot of work. I need to create a function that gives the full names instead of abbreviations for my arrays, I am running into a problem with reading files, but I know that it is my reading function itself. My shuffling of the deck works really nicely and that is why I declared three more things in my include files besides <iostream> and <fstream>. For the most part though, everything runs right and if we were going to set up a system of moving the cards to different columns like in a real game of solitaire, my output to screen function would probably have to be redone.
+
+I apologize for submitting it late.

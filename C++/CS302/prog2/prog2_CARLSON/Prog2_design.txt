@@ -1,0 +1,47 @@
+Name:Zachary Carlson
+Name:Jay Thom
+////////////////////////
+INSTRUCTIONS
+*This program is designed to run on linux*
+
+1. To run any of the drivers for the program, the program needs to first be compiled using the makefile.
+2. To run the actual program simply enter in the terminal ./prog2.out
+3. To run the test driver for ADT1, enter in the terminal ./adt1.out
+4. To run the test driver for the linked list, enter in the terminal ./linkedList.out
+////////////////////////
+ADT1: Booking
+Designed and Implemented by Zachary Carlson
+///////////////////////
+The booking class was designed for functionality with both arrays of bookings and single declaration of bookings. It is based off of a struct which has a customer name, and a special name. This special name can be anything the user wants and for this program it plays the role of magician name and holiday name depending on which booking is being used.
+
+Each booking is has an archive of events, which is an array based list of struct item. The cursor is used to move through the array and rear is set at the end of the array. There is a public variable called id. This id is a c style string which when constructed is empty. These id's play a crucial role when dealing with arrays of bookings. Since the bookings are sorted alphabetically by customer and the arrays of bookings are sorted alphabetically by id, these id's help you find specific bookings in the array since the bookings are constantly moving.
+
+In the program when the arrays of booking for magicians are called, the id's for each bookings represent the magician's name, and the special name of the items in the magicians bookings are representing the holiday names. For arrays of holidays the id represent the name of the holiday, and the special names represent the magician name.
+
+There are a few functions that are written specifically for arrays of bookings; setId and searchId. SetId will write the name of the id, and the searchId will return the index of the booking array in which the booking id matched the id you searched for.It will return a -1 if that id is not found.
+
+The functions that differ from a typical sorted array based list are; search, searchSpecial, status, and outputToFile. outputToFile will take an ofstream variable by reference and operate as if the file was already opened. Likewise it will not close the file. Search moves the cursor to the matching customername, where searchSpecial does the same thing except for the specialname. The status function is very similar to a print function, however has special scenarios if there is not an id, or if it is empty.
+
+There are generic functions like stringCompare and sortStringBefore are used for several different functions in the class, but are very simple public functions that can be used for any two strings.
+////////////////////////
+linkedList: Waiting List
+Designed and Implmented by Jay Thom
+////////////////////////
+The linkedList class is an array based list which utilizes a node class to carry the actual data used in the list. The functionality of this data type in the magician scheduling program is to provide for a waiting list for customers that are waiting for an available magician. The node class carries three data members: name, holiday, and a node pointer to indicate the next node.
+
+The list functions much like a queue with customer names placed at the end of the list and taken from the beginning of the list as magicians for the particular holiday required become available. In the event that a magician withdraws from the magician roster, his then cancelled appointments are placed at the beginning of the list to give the previously scheduled customer priority in the queue.
+
+The list utilizes the following member functions: addFront, to place customers at the front of the list. addRear, which places a customer at the end of the list. getFront, which retrieves data from the front of the list. getRear, which retrieves data from the end of the list. Lastly, displayList, which outputs the entire contents of the list (used mainly for testing).
+
+The test driver for the data type is menu driven, and outputs the results to screen to demonstrate functionality.
+////////////////////////
+Main:
+////////////////////////
+
+Main is the main driver of the program, which is a menu based program that allows users to view status of bookings, manages a waiting list, and schedules events/bookings for a customer scheduled with a magician on a holiday.
+
+All of the magicians are considered available for all holidays until they are booked for a customer with a holiday. When a customer wants to cancel their event, the program is designed to find the first person in the waiting list looking for a specific holiday. 
+
+Before the program runs, it reads to files, which are never changed in the program. These files contain the list of initial magicians and initial holidays. After that the program will read the scheduled.txt file which saves the previous schedule of when the program was last running. It then builds the two booking lists. However, the schedule.txt file does not contain information for the waiting list.
+
+After that transactions is opened and left open while the program is running. This file logs all of the different actions that happen which involve changes in the waiting list, and the bookings.

@@ -1,0 +1,10 @@
+christmas
+newyears
+thanksgiving
+halloween
+valentines
+groundhogday
+earthday
+presidentsday
+memorialday
+laborday

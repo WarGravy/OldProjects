@@ -1,0 +1,38 @@
+Program 4:
+Name: Zachary Carlson
+Name: Jay Thom
+
+ADT1 = linked list sorted
+ADT2 = linked list unsorted
+ADT3 = binary search tree iterative
+ADT4 = binary search tree recursive
+ATD5 = array based list sorted
+ADT6 = array based list unsorted 
+ADT7 = red black tree Extra Credit
+ADT8 = red black tree standard
+
+The program was designed to work on Ubuntu using C++. The majority of the code was taken from the book, except for some data types were coded by Zachary Carlson, and the Red Black Tree (ADT7) was coded by Jay Thom. To run the program compile in the terminal using the makefile by going to the proper directory and typing “make” into the terminal. Then type “./prog4.out” to run through the program.  Since the extra credit was worth 10 points and the programming assignment was worth 10 points, the work was split up initially between the two of us where Jay Thom would design the extra credit red black tree and Zachary Carlson designed the program assignment. However over time things changes and both members worked on everything, especially when it came down to debugging.
+
+The main driver is designed to properly work under 99 test cases (for file naming reasons) and theoretically run as many ADTs a user wants. When you open up the prog4.cpp you will see a list of global variables. All of them have comments explaining what they do. MAX_INTEGERS is the max size of numbers you wish to generate, such as 100,000 or 1,000,000. BOUNDS represents the number in which the random numbers are generated. For example, all numbers for the input, search, and delete list are generated between 1 and BOUNDS. There are filenames for all the output files and a global variable associated with them called indexFilenameStart. This is used for changing the filenames for the insertion, search, and delete lists. It indicates the ones place for the 2 digit number 00 located at the end of the filename before “.txt” TEST_CASES determines how many times the program runs through all the ADTs with different search, input, and deletion lists and lastly, the NUM_ADTS is the number of ADTs that are implemented in the main driver correctly that you wish to test.
+
+The program is designed to work through one ADT at a time, dynamically creating it when needed, and it uses the same delete, search, and  input list that is generated at the beginning of each test case to ensure that all ADTs are using the same data. The time includes the amount of time that it takes to run through the if statements within the loop (for example if(index==7) but after several tests the actual time it takes to do this is so negligible that it appears as 0. 
+
+The include files contain <stdint.h> because that is so we can generate values that are between 1 and 2^32. 2^32 is so large we needed to use the data type int64_t.
+
+There is one major problem, we believe that when using high values of MAX_INTEGERS, depending on the computer the program crashes because it runs out of space for the array based ADTs and cannot delete them properly. There error we get from gdb is this:
+------------------------------------------------------
+Program received signal SIGSEGV, Segmentation fault.
+0xb7d93a0e in ?? () from /lib/i386-linux-gnu/libc.so.6
+(gdb) bt
+#0  0xb7d93a0e in ?? () from /lib/i386-linux-gnu/libc.so.6
+#1  0xb7f8f51f in operator delete(void*) ()
+   from /usr/lib/i386-linux-gnu/libstdc++.so.6
+#2  0xb7f8f57b in operator delete[](void*) ()
+   from /usr/lib/i386-linux-gnu/libstdc++.so.6
+#3  0x0804af0b in arrayListSorted::~arrayListSorted() ()
+#4  0x0804dcff in main ()
+------------------------------------------------------
+
+but when the program works with smaller values, for example 100, the program runs smoothly without issue which means the insertion, and destructors are working properly, but with the error the destructor appears not to be working correctly so it's trying to delete memory that was should of been allocated but couldn't because it ran out of space.
+
+

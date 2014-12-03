@@ -1,0 +1,17 @@
+Script started on Fri 02 Nov 2012 08:22:17 PM PDT
+]0;zack@ubuntu: ~zack@ubuntu:~$ exitquit[1Pend./zacklab2g++ main.cpp -o zacklab2
+]0;zack@ubuntu: ~zack@ubuntu:~$ g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kquit[1Pend./zacklab2
+Array:
+1
+1
+5
+1
+1
+Member recieved from the getMember function: 5
+Index of 5 in the array is: 2
+Index of 7 in the array is: -1
+The Squared value of 5 is: 25
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Fri 02 Nov 2012 08:22:25 PM PDT

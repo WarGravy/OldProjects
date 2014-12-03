@@ -1,0 +1,46 @@
+Script started on Wed 12 Sep 2012 07:50:32 PM PDT
+]0;zack@ubuntu: ~zack@ubuntu:~$ g++ Documents/projectTwoSZ[K[KZCarlsonWedns[Kesday.cpp
+]0;zack@ubuntu: ~zack@ubuntu:~$ g++ Documents/projectTwoZCarlsonWednesday.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript[Kg++ Documents/projectTwoZCarlsonWednesday.cpp - [Ko test
+]0;zack@ubuntu: ~zack@ubuntu:~$ ./test
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 10Clubs
+First column top card: 3Hearts
+Second column top card: 2Spades
+Third column top card: 7Hearts
+Fourth column top card: 12Hearts
+Fifth column top card: 1Clubs
+Sixth column top card: 6Clubs
+Seventh column top card: 8Clubs
+q
+]0;zack@ubuntu: ~zack@ubuntu:~$ ./test
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 7Spades
+First column top card: 5Diamonds
+Second column top card: 3Clubs
+Third column top card: 5Clubs
+Fourth column top card: 6Clubs
+Fifth column top card: 11Clubs
+Sixth column top card: 10Hearts
+Seventh column top card: 1Hearts
+q
+]0;zack@ubuntu: ~zack@ubuntu:~$ ./test
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+r
+Please type the name of the file you wish to load and it's file extension(25 characters max): cardlist.txt
+Segmentation fault (core dumped)
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Wed 12 Sep 2012 07:51:21 PM PDT

@@ -1,0 +1,28 @@
+bool isOdd(int num)
+{
+
+if (int num % 2 != 0)
+{
+return true;
+}
+
+else
+{
+return false;
+}
+}
+
+-------------------------------
+
+bool isOdd(int num)
+{
+return int num % 2 != 0;
+}
+
+---------------------------------
+
+if using OR || only one needs to be true to return true
+
+prescedence !>&&>||
+
+---------------------------------

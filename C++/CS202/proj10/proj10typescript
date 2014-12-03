@@ -1,0 +1,19 @@
+Script started on Wed 14 Nov 2012 11:09:38 PM PST
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=2[1P./list.outmake TYPE=2[K1
+g++ -o list.out main.o list1.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=12[1P./list.out
+create array based list with my name: zac|k|
+insert the word test before the k in my namezactes|t|k
+testing first remove:zactes|k|
+testing second remove:|z|actes
+testing third remove:|a|ctes
+The Copy Constructor Works!
+Test 'goToBeginning' case: |a|ctes
+Test 'goToEnd' case: acte|s|
+Test 'goToPrior' case: act|e|s
+Test 'goToNext' case: acte|s|
+Test 'replace' case with an X: acte|X|
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Wed 14 Nov 2012 11:09:50 PM PST

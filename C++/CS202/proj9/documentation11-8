@@ -1,0 +1,9 @@
+Documentation Data Structures 1
+Zachary Carlson
+
+
+So I ran out of time, but stack 1 and 2 are done, I was working on stack 3 where I would just need to fix the push, pop, and then finally add the overloaded operators for each class.The third class would work backwards, and when I needed to take a value using pop I would increment the pointer of data appropriately until it was at the location, and then return that value, set the pointer for data to a home pointer, and then move the top by 1 using ++.
+
+The overloaded operators were left to do last because they take a little more though. I might have enough time on Friday to submit it late, but fully completed. I'm just unsure how much the late penalty really is.
+
+When I created the implmentation for all the stacks I just simply copy and pasted and then changed everything appropriately for that specific class. This mainly was just changing push and pop. My error I'm having with the program is my implementation for pop is not 100% correct or my main program is trying to grab 1 extra value, which is why it returns a -1 to the screen.

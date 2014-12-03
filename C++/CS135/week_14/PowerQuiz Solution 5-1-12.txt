@@ -1,0 +1,29 @@
+
+
+
+
+
+int parseWords( char sentence[], char wordList[][WORD_LENGTH] )
+   {
+    int index = 0;
+    int rowIndex = 0;
+    int colIndex = 0;
+
+    while( sentence[index] != NULL_CHAR )
+       {
+        if( isLetter( sentence[index] )
+           {
+            wordList[rowIndex][colIndex] = sentence[index];
+            colIndex++;
+           }
+        else if( sentence[index] == SPACE )
+           {
+            worList[rowIndex][colIndex] = NULL_CHAR;
+            rowIndex++;
+            colIndex = 0;
+           }
+        index++;
+       }
+    return rowIndex + 1;
+   }
+       

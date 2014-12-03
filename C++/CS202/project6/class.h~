@@ -1,0 +1,19 @@
+//NAME: Zachary Carlson
+//include files
+
+//class 
+class card{
+  public:
+  card();
+  ~card();
+  int getRank();
+  bool setRank(int);
+  char getColor();
+  bool setColor(char);
+  //noteToSelf think through suit functions 
+
+  private:
+  char* suit;
+  int rank;
+  char color;
+};

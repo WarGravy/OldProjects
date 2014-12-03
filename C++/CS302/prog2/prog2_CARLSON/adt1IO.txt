@@ -1,0 +1,45 @@
+adt1_IO
+Zachary Carlson
+
+There is very no input required by the user when adt1 is being tested. The driver will run through all of the possible scenarios, and since there is an outputToFile function, there is a TESTschedule.txt file which can be viewed to view the outputToFile function. The Output to the terminal should be like this:
+
+TESTING insert
+
+inserted at front successfully
+inserted before front successfully 
+inserted at end successfully
+USING STATUS TO DOUBLE CHECK
+
+magician.status();
+TESTING getitem
+
+
+get item works
+TESTING search
+
+search works!
+TESTING deleteItem
+
+delete item works
+USING STATUS TO DOUBLE CHECK
+
+
+magician.status();
+TESTING: setting an id
+
+magician.id
+TESTING output to file, check for TESTschedule.txt
+
+
+TESTING clear
+
+USING STATUS TO CHECK CLEAR
+magician.status();
+TESTING ARRAYS OF BOOKING FUNCTIONS
+
+TESTING add booking
+
+Added Magician Successfully!
+TESTING searchId
+
+SEARCHID worked

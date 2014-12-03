@@ -1,0 +1,45 @@
+week 8 notes
+
+bool done = false;
+
+while (!done)
+{
+
+//clear screen and draw menu here
+
+//prompt for choice
+
+//implement choice
+
+switch (choice)
+{
+case = 'q':
+case = 'Q':
+
+DONE = TRUE;
+break;
+
+}
+
+}
+
+
+new include file:
+
+#include <fstream>
+
+int main()
+{
+
+ofstream fout; you need to declare this in the variables
+fout is the name of your choice.
+
+ifstream fin;
+
+ofsteam is output files, ifstream is input files
+
+fout.open(" file name here ");
+you can use a string variable such as: string filename = "myufile.txt";
+
+fout.open( filename.c_str() );
+}

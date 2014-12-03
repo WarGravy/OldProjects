@@ -1,0 +1,12 @@
+Project 7 Documentation
+Zachary Carlson
+
+So the reason my program isn't finished is because I can't run it. When I type make everything compiles fine but when I type ./proj.out it runs through the program as if nothing happened. I tried everything trying to get it to run, and I did all this with cout statements in main that aren't there right now but I just can't seem to get it to run. I really don't understand these make files either.
+
+If I got my program to run, then I would of continued but I don't want to continue because I will have no idea if I will have segfaults or not. All I know is when I type make it compiles just fine right now. 
+
+I still need to make a copy contructor, a parameter constructor, a print function in main and deal to tableau. I'm submitting this seeing that it compiles, and I'm just hoping my code isn't broken anywhere. 
+
+Can you please tell me what I have to change to get my program to run?
+
+Any help in this matter would be very much appreciated. Thank you.

@@ -1,0 +1,1380 @@
+TEST CASE #0
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 7
+COMPARISONS for Insertion Phase: 19
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 60
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 26
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 39
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 37
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 49
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 30
+COMPARISONS for Insertion Phase: 24
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 52
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 53
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 4
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 34
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #1
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 13
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 21
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 39
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 29
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 49
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 18
+COMPARISONS for Insertion Phase: 47
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 55
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 46
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 4
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #2
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 12
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 24
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 34
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 40
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 52
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 21
+COMPARISONS for Insertion Phase: 35
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 8
+COMPARISONS for Insertion Phase: 64
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 49
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 35
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #3
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 8
+COMPARISONS for Insertion Phase: 23
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 25
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 35
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 40
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 45
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 20
+COMPARISONS for Insertion Phase: 35
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 64
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 47
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 37
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #4
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 13
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 26
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 44
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 44
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 54
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 19
+COMPARISONS for Insertion Phase: 38
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 52
+
+Clocks =10000
+Seconds = 0.01
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 52
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 2
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 38
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #5
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 8
+COMPARISONS for Insertion Phase: 24
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 38
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 31
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 48
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 29
+COMPARISONS for Insertion Phase: 27
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 7
+COMPARISONS for Insertion Phase: 62
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 61
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 38
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #6
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 16
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 20
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 22
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 34
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 38
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 44
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 18
+COMPARISONS for Insertion Phase: 36
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 65
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 55
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 34
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #7
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 10
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 21
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 40
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 50
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 22
+COMPARISONS for Insertion Phase: 42
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 50
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 45
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 3
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 32
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #8
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 8
+COMPARISONS for Insertion Phase: 21
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 70
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 22
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 34
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 33
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 44
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 20
+COMPARISONS for Insertion Phase: 39
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 6
+COMPARISONS for Insertion Phase: 56
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 52
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 4
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 31
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+TEST CASE #9
+---------------------------------
+
+ADT 1: Sorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 8
+COMPARISONS for Insertion Phase: 21
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 90
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 2: Unsorted Linked List
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 9
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 3: Binary Search Tree (iterative)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 29
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 50
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 4: Binary Search Tree (recursive)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 44
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 60
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 5: Array Based List (sorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 19
+COMPARISONS for Insertion Phase: 35
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 6: Array Based List (unsorted)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 0
+COMPARISONS for Insertion Phase: 0
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 100
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 7: Red Black Tree (Extra Credit)
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 5
+COMPARISONS for Insertion Phase: 52
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 58
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+
+---------------------------
+ADT 8: Red Black Tree
+Clocks =0
+Seconds = 0
+SWAPS for Insertion Phase: 2
+COMPARISONS for Insertion Phase: 30
+
+Clocks =0
+Seconds = 0
+SWAPS for Search Phase: 0
+COMPARISONS for Search Phase: 40
+
+Clocks =0
+Seconds = 0
+SWAPS for Deletion Phase: 0
+COMPARISONS for Deletion Phase: 0
+

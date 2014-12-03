@@ -1,0 +1,153 @@
+The file: input.txt was opened correctly.
+Input List item 0: 16-21
+Input List item 1: 25-30
+Input List item 2: 17-19
+Input List item 3: 26-26
+Input List item 4: 8-9
+Input List item 5: 5-8
+Input List item 6: 15-23
+Input List item 7: 0-3
+Input List item 8: 6-10
+Input List item 9: 19-20
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+3
+Enter the low value for the interval to delete: 
+16Enter the high value for the interval to delete: 
+21Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+3
+Enter the low value for the interval to delete: 
+0Enter the high value for the interval to delete: 
+3Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+0Enter the high value for the interval search: 
+3value not found in tree
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+3
+Enter the low value for the interval to delete: 
+19Enter the high value for the interval to delete: 
+20Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+17Enter the high value for the interval search: 
+19Found an overlap: 
+17	19
+17	19
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+1Enter the high value for the interval search: 
+10Found an overlap: 
+1	10
+8	9
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+1
+Printing Interval Tree...
+Interval:5	8
+Interval:6	10
+Interval:8	9
+Interval:17	19
+Interval:25	30
+Interval:26	26
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+8Enter the high value for the interval search: 
+9Found an overlap: 
+8	9
+8	9
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+8Enter the high value for the interval search: 
+10Found an overlap: 
+8	10
+8	9
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+7Enter the high value for the interval search: 
+10Found an overlap: 
+7	10
+8	9
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+2
+Enter the low value for the interval search: 
+7Enter the high value for the interval search: 
+9Found an overlap: 
+7	9
+8	9
+Program 5: Interval Tree
+
+(1)Print Tree
+(2)Search Tree
+(3)Delete Interval
+(4)Quit
+
+4

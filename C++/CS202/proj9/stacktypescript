@@ -1,0 +1,88 @@
+Script started on Thu 08 Nov 2012 10:57:15 PM PST
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=1
+g++ -c stack1.cpp
+g++ -o stack.out main.o stack1.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ .make TYPE=1[K./card.out[6Pmakescript./zacklab2g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P./zacklab2g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P./zacklab2g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P./zacklab2g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P./zacklab2g++ main.cpp -o zacklab2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P./zacklab2[4Pscript[2Pmake./card.out[6Pmake TYPE=1.[K/stack.out
+copy constructor is used to create stack 2 from stack 1
+printing stack 1: 
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+printing stack 2: 
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+clearing stack 1 and printing: 
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=2
+g++ -c stack2.cpp
+g++ -o stack.out main.o stack2.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=2./stack.out
+copy constructor is used to create stack 2 from stack 1
+printing stack 1: 
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+printing stack 2: 
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+clearing stack 1 and printing: 
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+]0;zack@ubuntu: ~zack@ubuntu:~$ ./stack.outmake TYPE=2[K3
+g++ -c stack3.cpp
+g++ -o stack.out main.o stack3.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ make TYPE=3./stack.out
+copy constructor is used to create stack 2 from stack 1
+stack.out: malloc.c:2451: sYSMALLOc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 * (sizeof(size_t))) - 1)) & ~((2 * (sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long)old_end & pagemask) == 0)' failed.
+Aborted (core dumped)
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Thu 08 Nov 2012 10:57:56 PM PST

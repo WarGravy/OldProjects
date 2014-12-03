@@ -1,0 +1,558 @@
+Script started on Wed 03 Oct 2012 10:58:19 PM PDT
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit./project5ZCg++ -g projectFiveZCarlsonWed.cpp -o project5ZC [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P-Wall -c projectFiveZCarlsonWed.cpp[C
+]0;zack@ubuntu: ~zack@ubuntu:~$ g++ -g -Wall -c projectFiveZCarlsonWed.cpp [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K./project5ZCg++ -g projectFiveZCarlsonWed.cpp -o project5ZC [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P-Wall -c projectFiveZCarlsonWed.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kquit[1Pendg++ projectFourZCarlsonWedv3.cpp -o [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9@-g -Wall -c projectFourZCarlsonWedv3.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9PprojectFourZCarlsonWedv3.cpp -o[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cend[Kquitexitg++ -g -Wall -c projectFiveZCarlsonWed.cpp [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5@projectFiveZCarlsonWed.cpp -o project5ZC[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P-Wall -c projectFiveZCarlsonWed.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5@projectFiveZCarlsonWed.cpp -o project5ZC[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./project5ZC[K[8Pexitg++ -g -Wall -c projectFiveZCarlsonWed.cpp [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg++ -g -Wall -c projectFiveZCarlsonWed.cpp [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kg++ -g -Wall -c projectFiveZCarlsonWed.cpp [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-o project5ZCarlson
+]0;zack@ubuntu: ~zack@ubuntu:~$ ./project5ZCarlson
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+r
+Please type the name of the file you wish to load and it's file extension(25 characters max): cardlist.txt
+Top Card of the Waste Pile: 
+1Clubs
+The Rest of the Waste Pile: 
+8Diamonds
+1Spades
+12Spades
+2Spades
+3Hearts
+7Clubs
+4Diamonds
+8Clubs
+2Clubs
+4Spades
+4Hearts
+1Diamonds
+13Spades
+8Hearts
+6Spades
+10Clubs
+11Spades
+9Hearts
+3Spades
+7Hearts
+9Spades
+5Spades
+4Clubs
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:1Hearts
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+3Clubs | 10Diamonds | 12Hearts | 13Diamonds | 2Hearts | 12Clubs | 9Clubs | 
+
+0Empty | 5Diamonds | 12Diamonds | 11Clubs | 2Diamonds | 9Diamonds | 11Diamonds | 
+
+0Empty | 0Empty | 3Diamonds | 10Spades | 6Clubs | 7Spades | 8Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 13Hearts | 10Hearts | 5Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): list.txt
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+12Diamonds
+The Rest of the Waste Pile: 
+1Diamonds
+12Clubs
+5Diamonds
+9Spades
+9Hearts
+7Diamonds
+11Spades
+8Spades
+12Hearts
+12Spades
+13Spades
+11Hearts
+5Spades
+11Clubs
+3Spades
+1Hearts
+6Spades
+1Spades
+3Hearts
+10Hearts
+8Clubs
+1Clubs
+5Hearts
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+6Diamonds | 2Spades | 13Diamonds | 8Hearts | 13Hearts | 10Clubs | 4Clubs | 
+
+0Empty | 4Spades | 4Hearts | 7Clubs | 10Diamonds | 2Clubs | 9Clubs | 
+
+0Empty | 0Empty | 6Hearts | 4Diamonds | 7Spades | 3Diamonds | 5Clubs | 
+
+0Empty | 0Empty | 0Empty | 3Clubs | 9Diamonds | 2Hearts | 2Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 6Clubs | 8Diamonds | 11Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 7Hearts | 10Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+r n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): ;s  list.txt
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+7Spades
+The Rest of the Waste Pile: 
+2Diamonds
+9Hearts
+9Spades
+12Diamonds
+3Spades
+13Spades
+5Diamonds
+6Clubs
+11Hearts
+4Hearts
+8Clubs
+6Hearts
+8Diamonds
+11Clubs
+9Diamonds
+3Clubs
+7Hearts
+9Clubs
+5Spades
+1Diamonds
+10Hearts
+2Clubs
+13Diamonds
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+7Clubs | 4Clubs | 4Spades | 10Clubs | 1Spades | 3Hearts | 12Clubs | 
+
+0Empty | 6Diamonds | 6Spades | 13Hearts | 5Clubs | 10Diamonds | 12Spades | 
+
+0Empty | 0Empty | 7Diamonds | 5Hearts | 11Spades | 1Hearts | 12Hearts | 
+
+0Empty | 0Empty | 0Empty | 8Spades | 1Clubs | 2Hearts | 4Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 11Diamonds | 8Hearts | 2Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 3Diamonds | 10Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): list.txt
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+5Spades
+The Rest of the Waste Pile: 
+4Hearts
+1Diamonds
+3Clubs
+11Spades
+2Clubs
+5Clubs
+1Clubs
+10Spades
+2Hearts
+4Spades
+12Clubs
+2Spades
+12Hearts
+7Spades
+2Diamonds
+7Clubs
+4Clubs
+3Diamonds
+13Spades
+7Hearts
+12Spades
+8Diamonds
+7Diamonds
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+11Diamonds | 11Clubs | 6Clubs | 8Spades | 11Hearts | 9Spades | 1Spades | 
+
+0Empty | 1Hearts | 10Clubs | 9Clubs | 10Hearts | 9Hearts | 13Diamonds | 
+
+0Empty | 0Empty | 10Diamonds | 5Diamonds | 3Spades | 6Diamonds | 12Diamonds | 
+
+0Empty | 0Empty | 0Empty | 8Hearts | 5Hearts | 13Hearts | 8Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 3Hearts | 6Spades | 6Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 4Diamonds | 9Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+list    n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): list.txt
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+9Clubs
+The Rest of the Waste Pile: 
+12Clubs
+13Diamonds
+7Spades
+2Clubs
+12Diamonds
+6Clubs
+8Clubs
+1Diamonds
+7Hearts
+2Hearts
+4Hearts
+5Hearts
+7Clubs
+1Hearts
+4Spades
+13Spades
+6Spades
+12Spades
+7Diamonds
+8Spades
+12Hearts
+11Clubs
+9Hearts
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+10Diamonds | 4Diamonds | 3Spades | 3Diamonds | 9Spades | 2Diamonds | 1Spades | 
+
+0Empty | 11Hearts | 5Diamonds | 8Diamonds | 10Hearts | 9Diamonds | 11Diamonds | 
+
+0Empty | 0Empty | 10Clubs | 2Spades | 6Hearts | 11Spades | 6Diamonds | 
+
+0Empty | 0Empty | 0Empty | 13Hearts | 3Hearts | 5Spades | 5Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 3Clubs | 8Hearts | 4Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 10Spades | 1Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+5Diamonds
+The Rest of the Waste Pile: 
+3Hearts
+10Clubs
+1Diamonds
+4Clubs
+6Clubs
+4Diamonds
+13Hearts
+9Clubs
+5Hearts
+10Hearts
+4Hearts
+5Clubs
+3Diamonds
+12Spades
+12Hearts
+1Hearts
+9Hearts
+7Diamonds
+9Spades
+3Clubs
+11Spades
+2Spades
+2Diamonds
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+5Spades | 11Hearts | 8Clubs | 10Diamonds | 12Clubs | 6Spades | 7Spades | 
+
+0Empty | 10Spades | 2Hearts | 7Hearts | 6Diamonds | 1Spades | 8Hearts | 
+
+0Empty | 0Empty | 11Clubs | 13Diamonds | 11Diamonds | 8Spades | 2Clubs | 
+
+0Empty | 0Empty | 0Empty | 9Diamonds | 7Clubs | 8Diamonds | 6Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 12Diamonds | 13Spades | 3Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 4Spades | 1Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+10Diamonds
+The Rest of the Waste Pile: 
+13Hearts
+5Spades
+2Spades
+4Spades
+1Clubs
+1Hearts
+8Hearts
+8Clubs
+7Spades
+9Clubs
+5Clubs
+2Diamonds
+2Clubs
+8Spades
+3Clubs
+10Clubs
+4Hearts
+13Diamonds
+9Hearts
+9Spades
+7Clubs
+1Spades
+8Diamonds
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+12Clubs | 10Hearts | 11Clubs | 2Hearts | 10Spades | 11Hearts | 12Spades | 
+
+0Empty | 6Diamonds | 7Hearts | 11Spades | 6Hearts | 13Spades | 6Clubs | 
+
+0Empty | 0Empty | 7Diamonds | 5Hearts | 3Spades | 3Hearts | 12Diamonds | 
+
+0Empty | 0Empty | 0Empty | 11Diamonds | 4Diamonds | 1Diamonds | 12Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 5Diamonds | 3Diamonds | 6Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 4Clubs | 9Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+13Hearts
+The Rest of the Waste Pile: 
+1Hearts
+2Clubs
+5Clubs
+6Hearts
+2Diamonds
+9Clubs
+12Spades
+12Diamonds
+9Spades
+11Spades
+8Hearts
+1Diamonds
+6Diamonds
+4Diamonds
+7Hearts
+3Spades
+4Clubs
+13Spades
+7Spades
+3Clubs
+2Spades
+7Clubs
+11Hearts
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+9Diamonds | 2Hearts | 1Spades | 3Hearts | 11Diamonds | 6Spades | 4Hearts | 
+
+0Empty | 6Clubs | 5Diamonds | 8Diamonds | 10Clubs | 8Clubs | 7Diamonds | 
+
+0Empty | 0Empty | 3Diamonds | 12Clubs | 8Spades | 4Spades | 11Clubs | 
+
+0Empty | 0Empty | 0Empty | 12Hearts | 10Diamonds | 9Hearts | 10Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 5Hearts | 1Clubs | 13Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 5Spades | 10Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+n
+Please type the name of the file you wish to save your cards to and it's file extension(25 characters max): n
+Shuffling Cards Please wait...
+Finished
+Top Card of the Waste Pile: 
+1Diamonds
+The Rest of the Waste Pile: 
+6Clubs
+6Diamonds
+10Spades
+7Spades
+8Clubs
+8Spades
+6Spades
+4Spades
+11Spades
+3Hearts
+6Hearts
+11Diamonds
+10Clubs
+5Diamonds
+11Hearts
+5Hearts
+7Clubs
+7Diamonds
+4Diamonds
+1Clubs
+3Spades
+9Clubs
+13Spades
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:1Hearts
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+2Hearts | 12Diamonds | 9Spades | 7Hearts | 2Diamonds | 3Diamonds | 8Diamonds | 
+
+0Empty | 12Clubs | 9Hearts | 12Spades | 12Hearts | 4Clubs | 5Clubs | 
+
+0Empty | 0Empty | 4Hearts | 8Hearts | 2Clubs | 13Hearts | 10Hearts | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 9Diamonds | 2Spades | 3Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 13Diamonds | 11Clubs | 10Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 1Spades | 5Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+r
+Please type the name of the file you wish to load and it's file extension(25 characters max): list.txt
+Top Card of the Waste Pile: 
+9Clubs
+The Rest of the Waste Pile: 
+12Clubs
+13Diamonds
+7Spades
+2Clubs
+12Diamonds
+6Clubs
+8Clubs
+1Diamonds
+7Hearts
+2Hearts
+4Hearts
+5Hearts
+7Clubs
+1Hearts
+4Spades
+13Spades
+6Spades
+12Spades
+7Diamonds
+8Spades
+12Hearts
+11Clubs
+9Hearts
+Diamond Foundation Pile:0Empty
+Hearts Foundation Pile:0Empty
+Spades Foundation Pile:0Empty
+Clubs Foundation Pile:0Empty
+
+
+
+COL 1 | COL 2 | COL 3 | COL 4 | COL 5 | COL 6 | COL 7
+10Diamonds | 4Diamonds | 3Spades | 3Diamonds | 9Spades | 2Diamonds | 1Spades | 
+
+0Empty | 11Hearts | 5Diamonds | 8Diamonds | 10Hearts | 9Diamonds | 11Diamonds | 
+
+0Empty | 0Empty | 10Clubs | 2Spades | 6Hearts | 11Spades | 6Diamonds | 
+
+0Empty | 0Empty | 0Empty | 13Hearts | 3Hearts | 5Spades | 5Clubs | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 13Diamonds | 11Clubs | 10Diamonds | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 1Spades | 5Spades | 
+
+0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 0Empty | 13Clubs | 
+
+Press N to start a New Game
+Press R to read a Previous Game
+Press Q at anytime to Quit
+q
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Wed 03 Oct 2012 11:00:03 PM PDT

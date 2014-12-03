@@ -1,0 +1,76 @@
+Script started on Fri 07 Dec 2012 09:51:11 PM PST
+]0;zack@ubuntu: ~zack@ubuntu:~$ make
+g++ -o game.out person.o mainZcarlson12.o student.o employee.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ makescriptgdb ./game.out[1P./game.out[1P./game.out[1P./game.out[1P./game.out
+PERSON CONSTRUCTOR
+STUDENT CONSTRUCTOR
+PERSON CONSTRUCTOR
+EMPLOYEE CONSTRUCTOR
+Student: 
+First Name: Charles Last Name: Babbage Age: 80 SSN: 530213286
+ NSHE Number: 1133764834 Major: mechanicalengineering GPA: 3.8
+
+Employee: 
+First Name: Marissa Last Name: Meyer Age: 37 SSN: 549114177
+ EMPLOYEE Number: 53321 Title: ceo Salary: 4.456e+06
+
+Student: 
+First Name: Alonzo Last Name: Church Age: 92 SSN: 586312110
+ NSHE Number: 1100539644 Major: mathematics GPA: 4
+
+Employee: 
+First Name: Dana Last Name: Ulery Age: 74 SSN: 573811211
+ EMPLOYEE Number: 23451 Title: engineer Salary: 124569
+
+Student: 
+First Name: Stephen Last Name: Cook Age: 72 SSN: 23561234
+ NSHE Number: 1101475893 Major: computerscience GPA: 3.9
+
+Student: 
+First Name: Dorothy Last Name: Denning Age: 67 SSN: 327318922
+ NSHE Number: 1100736485 Major: computerscience GPA: 4
+
+Student: 
+First Name: Sheila Last Name: Greibach Age: 73 SSN: 549752244
+ NSHE Number: 1104783456 Major: linguistics GPA: 3.7
+
+Employee: 
+First Name: Michael Last Name: Garey Age: 60 SSN: 296231456
+ EMPLOYEE Number: 51328 Title: author Salary: 243575
+
+Employee: 
+First Name: Grace Last Name: Hopper Age: 46 SSN: 43784356
+ EMPLOYEE Number: 31789 Title: admiral Salary: 145828
+
+Student: 
+First Name: Robert Last Name: Kahn Age: 73 SSN: 158678925
+ NSHE Number: 1100553678 Major: computerscience GPA: 3.8
+
+Student: 
+First Name: Donald Last Name: Knuth Age: 74 SSN: 549112366
+ NSHE Number: 1102458673 Major: physics GPA: 3.9
+
+Employee: 
+First Name: Ada Last Name: Lovelace Age: 37 SSN: 31437856
+ EMPLOYEE Number: 11223 Title: programmer Salary: 89275
+
+Employee: 
+First Name: Dennis Last Name: Ritchie Age: 70 SSN: 357556796
+ EMPLOYEE Number: 56782 Title: creator Salary: 213788
+
+Employee: 
+First Name: Maria Last Name: Klawe Age: 62 SSN: 573674325
+ EMPLOYEE Number: 27865 Title: president Salary: 673239
+
+Employee: 
+First Name: Bjarne Last Name: Stroustrup Age: 61 SSN: 454147658
+ EMPLOYEE Number: 45813 Title: developer Salary: 231756
+
+EMPLOYEE DESTRUCTOR
+PERSON DESTRUCTOR
+STUDENT DESTRUCTOR
+PERSON DESTRUCTOR
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Fri 07 Dec 2012 09:51:21 PM PST

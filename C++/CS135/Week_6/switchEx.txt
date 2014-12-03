@@ -1,0 +1,52 @@
+SWITCHES:
+
+EXAMPLE OF MENU
+
+switches din't work for strings
+
+
+1. (s)how all records
+2. (a)dd record
+3. delete record
+4. edit record
+5. quit
+
+
+char choice;
+
+cin >> choice;
+
+switch(choice)
+{
+
+case '1':
+case 'S':
+  showAllRecords();
+  wait2Secs();
+break;
+
+case '2':
+case 'A':
+  addRecord();
+  wait2Secs();
+break;
+
+case '3':
+  deleteRecord();
+  wait2Secs();
+break;
+
+case '4':
+  editRecord();
+  wait2Secs();
+break;
+
+case '5':
+  showFarewellMessage();
+  return 0;
+break;
+
+default:
+ showErrorMessage("No such option!!");
+
+}

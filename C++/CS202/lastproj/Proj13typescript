@@ -1,0 +1,56 @@
+Script started on Wed 12 Dec 2012 04:58:34 PM PST
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit./game.out[6Pmake
+g++ -o game.out nodeList.o mainZcarlson13.o arrayList.o node.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ makeexit./game.out
+OPENED FILE!
+SORTED NODE LIST: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+15
+16
+18
+19
+20
+
+SORTED ARRAY LIST: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+15
+16
+18
+19
+20
+
+The Index for 7 is: 6
+The Index for 14 is: 13
+The Index for 10 is: 9
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Wed 12 Dec 2012 04:58:42 PM PST

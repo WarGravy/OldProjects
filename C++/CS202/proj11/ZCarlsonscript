@@ -1,0 +1,297 @@
+Script started on Thu 29 Nov 2012 09:01:09 PM PST
+]0;zack@ubuntu: ~zack@ubuntu:~$ make./game.out[6Pmake
+g++ -o game.out card.o mainZcarlson11.o deck.o tableau.o waste.o foundation.o
+]0;zack@ubuntu: ~zack@ubuntu:~$ make./game.out
+Enter the filename with extension .txt: unshuffled.txt
+Reads in deck1 from file
+deck2 = deck1
+print deck 2
+1r heart
+2r heart
+3r heart
+4r heart
+5r heart
+6r heart
+7r heart
+8r heart
+9r heart
+10r heart
+11r heart
+12r heart
+13r heart
+1b spade
+2b spade
+3b spade
+4b spade
+5b spade
+6b spade
+7b spade
+8b spade
+9b spade
+10b spade
+11b spade
+12b spade
+13b spade
+1r diamond
+2r diamond
+3r diamond
+4r diamond
+5r diamond
+6r diamond
+7r diamond
+8r diamond
+9r diamond
+10r diamond
+11r diamond
+12r diamond
+13r diamond
+1b club
+2b club
+3b club
+4b club
+5b club
+6b club
+7b club
+8b club
+9b club
+10b club
+11b club
+12b club
+13b club
+shuffle deck1
+Shuffling Cards Please wait...
+Finished
+10b club
+7b spade
+13r heart
+5b club
+13r diamond
+3b spade
+8b club
+5b spade
+11r diamond
+6r heart
+3r heart
+3r diamond
+9r diamond
+5r heart
+10r heart
+12b club
+2b spade
+8r diamond
+11b club
+7b club
+2r heart
+11b spade
+8r heart
+6b spade
+6b club
+7r diamond
+3b club
+11r heart
+1r diamond
+2r diamond
+4b spade
+4b club
+4r heart
+9b club
+5r diamond
+10r diamond
+6r diamond
+1b spade
+8b spade
+13b spade
+1r heart
+7r heart
+9b spade
+4r diamond
+9r heart
+2b club
+1b club
+12r heart
+12b spade
+12r diamond
+10b spade
+13b club
+Tableau: 
+COLUMN 1 of the Tableau: 
+  10b club
+
+COLUMN 2 of the Tableau: 
+  7b spade
+  13r heart
+
+COLUMN 3 of the Tableau: 
+  5b club
+  13r diamond
+  3b spade
+
+COLUMN 4 of the Tableau: 
+  8b club
+  5b spade
+  11r diamond
+  6r heart
+
+COLUMN 5 of the Tableau: 
+  3r heart
+  3r diamond
+  9r diamond
+  5r heart
+  10r heart
+
+COLUMN 6 of the Tableau: 
+  12b club
+  2b spade
+  8r diamond
+  11b club
+  7b club
+  2r heart
+
+COLUMN 7 of the Tableau: 
+  11b spade
+  8r heart
+  6b spade
+  6b club
+  7r diamond
+  3b club
+  11r heart
+
+test
+6r heart
+here is the card from column 4 row 4: 6r heart
+WASTE PILE: 
+1r diamond
+2r diamond
+4b spade
+4b club
+4r heart
+9b club
+5r diamond
+10r diamond
+6r diamond
+1b spade
+8b spade
+13b spade
+1r heart
+7r heart
+9b spade
+4r diamond
+9r heart
+2b club
+1b club
+12r heart
+12b spade
+12r diamond
+10b spade
+13b club
+
+WASTE PILE: 
+1r diamond
+2r diamond
+4b spade
+4b club
+4r heart
+9b club
+5r diamond
+10r diamond
+6r diamond
+1b spade
+8b spade
+13b spade
+1r heart
+7r heart
+9b spade
+4r diamond
+9r heart
+2b club
+1b club
+12r heart
+12b spade
+12r diamond
+10b spade
+13b club
+DUMP:WASTE PILE: 
+1r diamond
+2r diamond
+4b spade
+4b club
+4r heart
+9b club
+5r diamond
+10r diamond
+6r diamond
+1b spade
+8b spade
+13b spade
+1r heart
+7r heart
+9b spade
+4r diamond
+9r heart
+2b club
+1b club
+12r heart
+12b spade
+12r diamond
+10b spade
+13b club
+
+TESTING FLIP FUNCTION: 
+Top card of the waste pile: 4b spade
+TESTING FLIP FUNCTION: 
+Top card of the waste pile: 9b club
+TESTING FLIP FUNCTION: 
+Top card of the waste pile: 6r diamond
+Tableau: 
+COLUMN 1 of the Tableau: 
+  1r heart
+
+COLUMN 2 of the Tableau: 
+  2r heart
+  3r heart
+
+COLUMN 3 of the Tableau: 
+  4r heart
+  5r heart
+  6r heart
+
+COLUMN 4 of the Tableau: 
+  7r heart
+  8r heart
+  9r heart
+  10r heart
+
+COLUMN 5 of the Tableau: 
+  11r heart
+  12r heart
+  13r heart
+  1b spade
+  2b spade
+
+COLUMN 6 of the Tableau: 
+  3b spade
+  4b spade
+  5b spade
+  6b spade
+  7b spade
+  8b spade
+
+COLUMN 7 of the Tableau: 
+  9b spade
+  10b spade
+  11b spade
+  12b spade
+  13b spade
+  1r diamond
+  2r diamond
+
+test
+1r heart
+Foundation Stack Top Card: 1r heart
+Rest of the pile:
+
+Using the Pop Function
+]0;zack@ubuntu: ~zack@ubuntu:~$ exit
+exit
+
+Script done on Thu 29 Nov 2012 09:01:20 PM PST

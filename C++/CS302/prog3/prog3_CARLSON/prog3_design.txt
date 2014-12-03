@@ -1,0 +1,10 @@
+Zachary Carlson
+Program 3 Design
+
+So my program is using a stack that has the set pre conditions that if you pop something off the stack, you need to know that there is something to pop off or else you will get a Segmentation Fault. I did this as a way for me to know that if my program crashes, than I'm not coding my recursion function properly.
+
+I have 3 stacks, which contain integers, and a disk number. This disk number is the number of disks you wish to use. This means that the program will solve any game of Towers of Hanoi that is using a positive integer.
+
+After I prompt the use for a positive integer, I declare 3 stacks (or pegs) with the size equal to the amount of disks to ensure that I have room to move disks from peg to peg. My recursive function is working from the bottom up. I first move all of the disks from A to B so that I can move the bottom disk from A to C. Then I move all of the disks from B to C using the same function. After every move it outputs that move to the terminal.
+
+My program was designed for linux, so open up the terminal after unzipping the files, compile everything by entering the command "make" and then run the program by typing "./prog3.out"

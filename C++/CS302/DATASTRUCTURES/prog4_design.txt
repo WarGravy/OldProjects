@@ -1,0 +1,8 @@
+ADT1 = linked list sorted[done]
+ADT2 = linked list unsorted[done]
+ADT3 = binary search tree iterative[done] 
+ADT4 = binary search tree recursive[done]
+ATD5 = array based list sorted[done]
+ADT6 = array based list unsorted [done]
+ADT7 = red black tree[not done]
+ADT8 = EXTRA CRED RB TREE[jay thom]

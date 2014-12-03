@@ -1,0 +1,172 @@
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+1
+enter a name
+
+jim
+enter a holiday
+
+christmas
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+5
+jim christmas
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+2
+enter a name
+
+john
+enter a holiday
+
+newyears
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+5
+jim christmas
+john newyears
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+3
+jim christmas
+
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+4
+john newyears
+
+
+
+
+            Node Based List Class
+
+
+1.  Add a name and holiday to the front of the list
+
+2.  Add a name and holiday to the rear of the list
+
+3.  Get the name and holiday at the front of the list
+
+4.  Get the name and holiday at the rear of the list
+
+5.  Display the list
+
+6.  Quit
+
+
+
+
+5
+
