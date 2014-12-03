@@ -6,12 +6,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
-import java.util.Vector;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.FileNotFoundException;
-import java.io.IOException; 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 @SuppressWarnings("unchecked")
 public class ColorPicker extends JFrame{
@@ -239,7 +235,7 @@ public class ColorPicker extends JFrame{
     	
     	return String.valueOf(i);
     } 
-    //String to Int to String Color converter
+    //Read file
     public void readFile(){
     	pallete.removeAllElements();
     	backupPallete.removeAllElements();
