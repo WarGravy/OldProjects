@@ -8,7 +8,9 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import java.util.Vector;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.FileNotFoundException;
+import java.io.IOException; 
 import java.util.Scanner;
 
 @SuppressWarnings("unchecked")
@@ -23,6 +25,8 @@ public class ColorPicker extends JFrame{
 	protected Vector<ColorSample> pallete;
 	protected Vector<ColorSample> backupPallete;
 	protected int lastPalleteIndex;
+	protected String fTitle;
+	
 	public static void main(String[] args) {
 		new ColorPicker("Color Picker Application");
 	}
@@ -30,6 +34,7 @@ public class ColorPicker extends JFrame{
 	public ColorPicker(String title) 
 	{
 		super(title);		// call constructor of base class
+		fTitle = title;
 		setSize(430, 450);
 		addWindowListener(new WindowDestroyer());
 
@@ -142,12 +147,12 @@ public class ColorPicker extends JFrame{
 	{      
 		public void actionPerformed(ActionEvent e)
 		{
+			boolean flag = false;
 			if ( e.getSource() == save )
 			{
-				String s1 = tfRed.getText();
-				String s2 = tfGreen.getText();
-				String s3 = tfBlue.getText();
-				System.out.println("Full name: " + s1 + " " + s2 + " " + s3);
+				saveFile();
+				readFile();//update the backupPallete
+				flag = true;
 			}
 			else if ( e.getSource() == reset ){
 				System.out.println("You pressed the Reset button.");
@@ -184,6 +189,10 @@ public class ColorPicker extends JFrame{
 			else if(e.getSource() == bPlus){
 				tfBlue.setText(ColorCounter(tfBlue.getText(), true));
 			}
+			/*if(!flag && !fTitle.toLowerCase().contains("*") ){
+				fTitle += " *";
+				this.setTitle(fTitle);
+			}*/
 			panelColor.repaint();
 		}
 	} 
@@ -255,7 +264,7 @@ public class ColorPicker extends JFrame{
         	}
         	sc.close();
     	} 
-		catch (FileNotFoundException e) {
+		catch (IOException e) {
 	        e.printStackTrace();
     	}
     } 
@@ -269,6 +278,26 @@ public class ColorPicker extends JFrame{
 			g.fillRect(1, 1, d.width-2, d.height-2);
 		
 		}
+	}
+	public void saveFile(){
+		try{
+		FileWriter fw = new FileWriter("save.txt");
+ 		int i = 1;
+		for (ColorSample cs: pallete ) {
+			if(i != pallete.size()){
+				fw.write(cs.name + " " + String.valueOf(cs.red) + " " + String.valueOf(cs.green) + " " +  String.valueOf(cs.blue) + "\n");
+			}
+			else{
+				fw.write(cs.name + " " + String.valueOf(cs.red) + " " + String.valueOf(cs.green) + " " +  String.valueOf(cs.blue));
+			}
+			i++;
+		}
+	 
+		fw.close();
+		}
+		catch (IOException e) {
+	        e.printStackTrace();
+    	}
 	}
     class ColorSample
 	{
