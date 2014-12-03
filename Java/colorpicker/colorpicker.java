@@ -21,6 +21,8 @@ public class ColorPicker extends JFrame{
 	protected JList listColors;
 	protected Graphics graphics;
 	protected Vector<ColorSample> pallete;
+	protected Vector<ColorSample> backupPallete;
+	protected int lastPalleteIndex;
 	public static void main(String[] args) {
 		new ColorPicker("Color Picker Application");
 	}
@@ -33,6 +35,8 @@ public class ColorPicker extends JFrame{
 
 		//initialize variables
 		pallete = new Vector<ColorSample>();
+		backupPallete = new Vector<ColorSample>();
+		lastPalleteIndex = -1;
 		//lists
 		listColors = new JList();
 		listColors.addListSelectionListener(new ListHandler());
@@ -107,31 +111,12 @@ public class ColorPicker extends JFrame{
 		getContentPane().add(reset);
 		reset.setBounds(150, 350, 70, 30);
 
-		//read file and build list of ColorSamples
-		File file = new File("save.txt");
-
-    	try {
-
-	        Scanner sc = new Scanner(file);
-
-	        while (sc.hasNextLine()) {
-	            String temp = sc.next();
-	            int r = sc.nextInt();
-	            int g = sc.nextInt();
-	            int b = sc.nextInt();
-	            System.out.println(temp);
-	            System.out.println(r);
-	            System.out.println(g);
-	            System.out.println(b);
-	            pallete.add(new ColorSample(temp,r,g,b));
-        	}
-        	sc.close();
-    	} 
-		catch (FileNotFoundException e) {
-        e.printStackTrace();
-    	}
 		//build vector of colors
+		readFile();
 		Vector<String> colors = new Vector<String>();
+		for(ColorSample sample : pallete){
+			colors.add(new String(sample.name));
+		}
 		//set list data
 		listColors.setListData(colors);
 
@@ -166,6 +151,14 @@ public class ColorPicker extends JFrame{
 			}
 			else if ( e.getSource() == reset ){
 				System.out.println("You pressed the Reset button.");
+				pallete.removeAllElements();
+				for(ColorSample cs :backupPallete){
+					pallete.add(new ColorSample(cs.name, cs.red, cs.green, cs.blue));
+				}
+				tfRed.setText(String.valueOf(pallete.get(lastPalleteIndex).red));
+				tfBlue.setText(String.valueOf(pallete.get(lastPalleteIndex).blue));
+				tfGreen.setText(String.valueOf(pallete.get(lastPalleteIndex).green));
+				lastPalleteIndex = -1;
 
 			}
 			else if(e.getSource() == rMinus){
@@ -191,7 +184,7 @@ public class ColorPicker extends JFrame{
 			else if(e.getSource() == bPlus){
 				tfBlue.setText(ColorCounter(tfBlue.getText(), true));
 			}
-			
+			panelColor.repaint();
 		}
 	} 
 	// Define list listener                                       
@@ -201,9 +194,22 @@ public class ColorPicker extends JFrame{
 		{
 		  if ( e.getSource() == listColors && !e.getValueIsAdjusting() )
 		     {
+		     	//store last values in color pallete
+		     	if(lastPalleteIndex > -1){
+		     		String temp = pallete.get(lastPalleteIndex).name;
+		     		pallete.set(lastPalleteIndex, new ColorSample(temp, Integer.parseInt(tfRed.getText()),Integer.parseInt(tfGreen.getText()),Integer.parseInt(tfBlue.getText())));
+		     	}
 				int i = listColors.getSelectedIndex();
+				lastPalleteIndex = i;
 				String s = (String) listColors.getSelectedValue();
 				System.out.println("Position " + i + " selected: " +s);
+
+				//set values to the stored colors in the pallete
+				tfBlue.setText(String.valueOf(pallete.get(i).blue));
+				tfRed.setText(String.valueOf(pallete.get(i).red));
+				tfGreen.setText(String.valueOf(pallete.get(i).green));
+				panelColor.repaint();
+
 		     }
 		 
 		}
@@ -221,8 +227,37 @@ public class ColorPicker extends JFrame{
     		i = 255;
     	if(i < 0)
     		i = 0;
-    	panelColor.repaint();
+    	
     	return String.valueOf(i);
+    } 
+    //String to Int to String Color converter
+    public void readFile(){
+    	pallete.removeAllElements();
+    	backupPallete.removeAllElements();
+    	//read file and build list of ColorSamples
+		File file = new File("save.txt");
+
+    	try {
+
+	        Scanner sc = new Scanner(file);
+
+	        while (sc.hasNextLine()) {
+	            String temp = sc.next();
+	            int r = sc.nextInt();
+	            int g = sc.nextInt();
+	            int b = sc.nextInt();
+	            System.out.println(temp);
+	            System.out.println(r);
+	            System.out.println(g);
+	            System.out.println(b);
+	            pallete.add(new ColorSample(temp,r,g,b));
+	            backupPallete.add(new ColorSample(temp,r,g,b));
+        	}
+        	sc.close();
+    	} 
+		catch (FileNotFoundException e) {
+	        e.printStackTrace();
+    	}
     } 
     class ColorPanel extends JComponent
 	{
