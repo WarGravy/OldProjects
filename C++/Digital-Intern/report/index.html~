@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>The Digital Intern Report</title>
+    <head>
+	<link href="reset.css" rel="stylesheet" type="text/css" media="screen" />
+        <style>
+            th { color: #003366 }
+            td { color: #000000 }
+            th { font-family: Arial}
+            td { font-family: Arial}
+            li { color: #000000 }
+            p { color: #003366 }
+            
+        </style>
+    </head>
+<body  align="center">
+    <div style="width:100%; text-align:center">
+<a href="index.html"><img src="images/logo.png" alt="The Digital Intern Developed By Zachary Carlson"></a>
+    <p><br/></p>
+    </div>
+    <table border = "5" width = "800" align="center">
+    <tr>
+        <th>Summary</th>
+    </tr>
+    <tr>
+        <td>Numbers of files searched for: : 8056</td>
+    </tr>
+    <tr>
+        <td>Numbers of files not in use: : 1777 (22%)</td>
+    </tr>
+    <tr>
+        <td>Numbers of files with bad names: : 1265 (15%)</td>
+    </tr>
+</table>
+<p><br/></p>
+        <p><b>Summary Pages</b><br />Linked List of Level One Folders</p>
+<ul>
+        <li><a href="pages/SEC.html">SEC (54/11)</a></li>
+        <li><a href="pages/Transfer.html">Transfer (4/27)</a></li>
+        <li><a href="pages/academic-central.html">academic-central (86/13)</a></li>
+        <li><a href="pages/administration-finance.html">administration-finance (518/444)</a></li>
+        <li><a href="pages/around-campus.html">around-campus (0/0)</a></li>
+        <li><a href="pages/business.html">business (97/46)</a></li>
+        <li><a href="pages/dhs.html">dhs (47/38)</a></li>
+        <li><a href="pages/education.html">education (64/24)</a></li>
+        <li><a href="pages/engineering.html">engineering (10/1)</a></li>
+        <li><a href="pages/events-import.html">events-import (2/0)</a></li>
+        <li><a href="pages/events.html">events (0/0)</a></li>
+        <li><a href="pages/graduate-school.html">graduate-school (2/2)</a></li>
+        <li><a href="pages/it.html">it (0/1)</a></li>
+        <li><a href="pages/journalism.html">journalism (1/0)</a></li>
+        <li><a href="pages/lawlor.html">lawlor (24/13)</a></li>
+        <li><a href="pages/liberal-arts.html">liberal-arts (26/26)</a></li>
+        <li><a href="pages/nees.html">nees (2/0)</a></li>
+        <li><a href="pages/news.html">news (2/0)</a></li>
+        <li><a href="pages/president.html">president (0/1)</a></li>
+        <li><a href="pages/provost.html">provost (393/249)</a></li>
+        <li><a href="pages/research.html">research (71/68)</a></li>
+        <li><a href="pages/science.html">science (26/26)</a></li>
+        <li><a href="pages/student-services.html">student-services (322/254)</a></li>
+        <li><a href="pages/tto.html">tto (0/2)</a></li>
+        <li><a href="pages/unr.html">unr (26/19)</a></li>
+</ul>
+<p><br/></p>
+<img src="images/banana.gif" alt="Banana Time!">
+</body>
+</html>
