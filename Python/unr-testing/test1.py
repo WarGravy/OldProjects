@@ -6,7 +6,10 @@
 import webbrowser
 
 def detail(baseHref):
-	webbrowser.get().open(baseHref)
+	webbrowser.get().open(baseHref + '/cse/about')#basic detail page
+	webbrowser.get().open(baseHref + '/commencement/ceremony')#video component
+	webbrowser.get().open(baseHref + '/marcom/style-guide')#A-Z Listing
+	webbrowser.get().open(baseHref + '/cse/contact')#Contact Us Tables
 	pass
 def displayData(baseHref):
 	pass
