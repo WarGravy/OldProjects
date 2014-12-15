@@ -6,6 +6,7 @@
 import webbrowser
 
 def detail(baseHref):
+	webbrowser.get().open(baseHref)
 	pass
 def displayData(baseHref):
 	pass
