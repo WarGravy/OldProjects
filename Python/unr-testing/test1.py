@@ -14,6 +14,13 @@ def detail(baseHref):
 def displayData(baseHref):
 	pass
 def general(baseHref):
+	webbrowser.get().open(baseHref + '/search')#Search
+	webbrowser.get().open(baseHref + '/site-map')#site-map code
+	webbrowser.get().open(baseHref + '/accessibility')
+	webbrowser.get().open(baseHref + '/contact-us')
+	webbrowser.get().open(baseHref + '/copyright/dmca')#second level
+	webbrowser.get().open(baseHref + '/emergency/alerts/faq')#FAQ functionality
+	webbrowser.get().open(baseHref + '/faculty-staff-forms')#Forms functionality
 	pass
 def topLevel(baseHref):
 	pass
@@ -22,8 +29,17 @@ def dupDegree(baseHref):
 def degrees(baseHref):
 	pass
 def sectionFronts(baseHref):
+	webbrowser.get().open(baseHref + '/me')
+	webbrowser.get().open(baseHref + '/cse')
+	webbrowser.get().open(baseHref + '/cla')
+	webbrowser.get().open(baseHref + '/sponsored-projects')
+	webbrowser.get().open(baseHref + '/research-integrity')
 	pass
 def nvToday(baseHref):
+	webbrowser.get().open(baseHref + '/nevada-today')#Homepage
+	webbrowser.get().open(baseHref + '/nevada-today/news')#News
+	webbrowser.get().open(baseHref + '/nevada-today/news/about')#About
+	webbrowser.get().open(baseHref + '/nevada-today/news/2014/ezekiel-is-november-employee-of-month')#News Story
 	pass
 	
 	
