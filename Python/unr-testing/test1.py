@@ -46,6 +46,7 @@ def nvToday(baseHref):
 	
 def main():
 	baseHref = "http://staging.unr.edu"
+	#baseHref = "http://www.unr.edu"
 	if True:
 		print("Opening Detail List Pages")
 		print("-----------------------------------------------")
