@@ -10,8 +10,33 @@ def detail(baseHref):
 	webbrowser.get().open(baseHref + '/commencement/ceremony')#video component
 	webbrowser.get().open(baseHref + '/marcom/style-guide')#A-Z Listing
 	webbrowser.get().open(baseHref + '/cse/contact')#Contact Us Tables
+	webbrowser.get().open(baseHref + '/ehs/upcoming-events')#Events Embed
 	pass
 def displayData(baseHref):
+	webbrowser.get().open(baseHref + '/ehs/search?q=lab')#Google CSE Code
+	webbrowser.get().open(baseHref + '/oiss/forms')#Forms
+	webbrowser.get().open(baseHref + '/ehs/forms-and-applications')#Forms with Search and Filter
+	webbrowser.get().open(baseHref + '/liberal-arts/student-resources/academic-advising/advising-faqs')#FAQ without search and filter
+	webbrowser.get().open(baseHref + '/housing/faq')#FAQ w/ Search and Categories
+	webbrowser.get().open(baseHref + '/site-map')#Site Map
+	webbrowser.get().open(baseHref + '/cse/people/faculty')#Faculty List
+	webbrowser.get().open(baseHref + '/biology/people/patricia-berninsone')#Person Page
+	webbrowser.get().open(baseHref + '/engineering/student-resources/careers-and-internships/for-employers/submit-a-job-posting')#FormStack Form
+	webbrowser.get().open(baseHref + '/grad/forms/exit-survey')#Google Forms
+	webbrowser.get().open(baseHref + '/liberal-arts/about/news')#News
+	webbrowser.get().open(baseHref + '/gsa/living-in-reno')#Media Include
+	webbrowser.get().open(baseHref + '/cse/resources/fellowships')#RSS
+	#List of POI
+	webbrowser.get().open(baseHref + '/housing/dining/locations/downunder')#POI Detail
+	webbrowser.get().open(baseHref + '/housing/tool-kit/rates-2015-2016')#Yearly Cost Component
+	webbrowser.get().open(baseHref + '/housing/dining/locations/downunder/daily-menu')#Food Menu Data
+	webbrowser.get().open(baseHref + '/grad/about/graduate-faculty')#Graduate Faculty Members
+	webbrowser.get().open(baseHref + '/grad/tuition-and-fees')#Rate Summaries
+	#Things To Do
+	webbrowser.get().open(baseHref + '/tutoring-center/types-of-tutoring/supplemental-instruction/si-schedule')#Excel Embed
+	webbrowser.get().open(baseHref + '/research-integrity/research-integrity')#Content Blocks
+	webbrowser.get().open(baseHref + '/hr/compensation-and-evaluation/pdqs')#PDQ
+	webbrowser.get().open(baseHref + '/liberal-arts/degrees')#List of Degrees
 	pass
 def general(baseHref):
 	webbrowser.get().open(baseHref + '/search')#Search
@@ -25,6 +50,7 @@ def general(baseHref):
 def topLevel(baseHref):
 	pass
 def dupDegree(baseHref):
+	#Degree Listing
 	pass
 def degrees(baseHref):
 	pass
@@ -34,6 +60,7 @@ def sectionFronts(baseHref):
 	webbrowser.get().open(baseHref + '/cla')
 	webbrowser.get().open(baseHref + '/sponsored-projects')
 	webbrowser.get().open(baseHref + '/research-integrity')
+	webbrowser.get().open(baseHref + '/math')
 	pass
 def nvToday(baseHref):
 	webbrowser.get().open(baseHref + '/nevada-today')#Homepage
