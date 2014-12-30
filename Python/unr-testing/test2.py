@@ -7,11 +7,25 @@
 
 #Path to file
 #C:\Users\zcarlson\Documents\GitHub\OldProjects\Python\unr-testing\test2.py
-
 import webbrowser
 import os
 
-def cmsPath():
+#CLASSES
+class Asset():
+	def __init__(self, path, isImage = False):
+		self.path = path
+		self.altPath = path
+		self.name = os.path.basename(path)
+		self.found = False
+		self.type = "Document"
+		self.containsSpaces = False
+		if isImage:
+			self.type = "Image"
+		if ' ' in path:
+			self.containsSpaces = True
+			self.altPath = self.altPath.replace(' ', '%20')
+#FUNCTIONS
+def getCMSPath():
 	try:
 		onlyfiles = os.listdir('\\'+'\cms.unr.edu\wwwroot\cms')
 		if onlyfiles:
@@ -20,28 +34,41 @@ def cmsPath():
 		return ''
 	return ''
 
-def storeFileNames(directoryName):
+def getLevelOneFolderNames(directoryName):
+	pass
+
+def getXML(directoryName, usersDirectory):
+	pass
+
+def getFileNames(directoryName):
 	pass
 
 def writeResults(resultsList):
 	f = open('test2-results.html', 'w+')
 	f.close()
-	#get file path
-	#open html file with browser
+	#write data
 	#index = 'G:\(Zack Carlson)\site-related\TotalValidatorTool Criminal Justice\TotalValidator.html'
-	#webbrowser.get().open(index)
+	#open html file with browser
+	webbrowser.get().open('test2-results.html')
 
+#MAIN SCRIPT DRIVER
 def main():
 	#Find the cms.unr.edu directory
-	cms = cmsPath()
+	cms = getCMSPath()
 	if cms == '':
 		print('FAILURE to Read cms.unr.edu. Please connect to the network drive.')
 		exit()
 	else:
-		print('Successfully read the cms.unr.edu directory. Script Running...')
-	#Read all files and filter the files into relevant files for searching
+		print('Successfully read the cms.unr.edu directory.')
+		print('Scan Running...')
+	#Read all level 1 folders for Documents
 
-	#Foreach primary folder, read all files names and mark as found
+	#Read all XML files and filter the files into relevant files for searching
+
+	#Foreach primary folder
+
+		#read all files names
+
 		#Foreach XML file
 			#Foreach file 
 				#if found remove from list and increment the index
@@ -49,7 +76,7 @@ def main():
 		#Append unused files to the list of results
 
 	#writeResults()
-	print('Script finished.')
+	print('Scan finished.')
 	exit()
 	
 if __name__ == "__main__": main()
