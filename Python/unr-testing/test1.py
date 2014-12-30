@@ -3,6 +3,9 @@
 #Zachary Carlson
 #University of Nevada, Reno
 #Project Samurai Test 1
+
+#Path to file
+#C:\Users\zcarlson\Documents\GitHub\OldProjects\Python\unr-testing\test1.py
 import webbrowser
 
 def detail(baseHref):
@@ -48,11 +51,26 @@ def general(baseHref):
 	webbrowser.get().open(baseHref + '/faculty-staff-forms')#Forms functionality
 	pass
 def topLevel(baseHref):
+	webbrowser.get().open(baseHref)#Home
+	webbrowser.get().open(baseHref + '/about')#About
+	webbrowser.get().open(baseHref + '/admissions')#admissions
+	webbrowser.get().open(baseHref + '/academics')#academics
+	webbrowser.get().open(baseHref + '/student-life')#student life
+	webbrowser.get().open(baseHref + '/research')#research
+	webbrowser.get().open(baseHref + '/impact')#impact
 	pass
 def dupDegree(baseHref):
-	#Degree Listing
+	webbrowser.get().open(baseHref + '/liberal-arts/degrees/criminal-justice/ba')
+	webbrowser.get().open(baseHref + '/liberalarts/degrees/criminial-justice/ba-law-justice')
+	webbrowser.get().open(baseHref + '/liberal-arts/degrees/criminal-justice/ma')
 	pass
 def degrees(baseHref):
+	webbrowser.get().open(baseHref + '/degrees')#degrees homepage
+	webbrowser.get().open(baseHref + '/degrees/search?p=level')#view by level
+	webbrowser.get().open(baseHref + '/degrees/search?p=college')#view by college
+	webbrowser.get().open(baseHref + '/search?p=interest')#view by interest
+	webbrowser.get().open(baseHref + '/degrees/search')#view all
+	webbrowser.get().open(baseHref + '/degrees/computer-science-and-engineering/bs#Overview')#Sample
 	pass
 def sectionFronts(baseHref):
 	webbrowser.get().open(baseHref + '/me')
