@@ -12,49 +12,90 @@ import os
 
 #CLASSES
 class Asset():
-	def __init__(self, path, isImage = False):
-		self.path = path
-		self.altPath = path
-		self.name = os.path.basename(path)
-		self.found = False
-		self.type = "Document"
-		self.containsSpaces = False
+	def __init__(self, pathGiven, isImage = False):
+		#Clean path
+		path = pathGiven[pathGiven.index(cms + '\\xml\\') + len(cms + '\\xml\\'):]
 		if isImage:
+			path = path[path.index('images\\') + len('images\\'):]
 			self.type = "Image"
+		else:
+			path = path[path.index('documents\\') + len('documents\\'):]
+			self.type = "Document"
+		#set members
+		path = path.lower()
+		self.path = path.replace('\\','/')
+		self.altPath = path.replace('\\','/')
+		self.name = os.path.basename(path)
+		self.containsSpaces = False
 		if ' ' in path:
 			self.containsSpaces = True
 			self.altPath = self.altPath.replace(' ', '%20')
 #FUNCTIONS
 def getCMSPath():
 	try:
-		onlyfiles = os.listdir('\\'+'\cms.unr.edu\wwwroot\cms')
-		if onlyfiles:
-			return '\\'+'\cms.unr.edu\wwwroot\cms'
+		files = os.listdir('\\'+'\cms.unr.edu\wwwroot\cms')
+		if files:
+			return '\\' + '\cms.unr.edu\wwwroot\cms'
 	except:
 		return ''
 	return ''
 
 def getLevelOneFolderNames(directoryName):
-	pass
+	folders = [ os.path.join(directoryName,f) for f in os.listdir(directoryName) if not os.path.isfile(os.path.join(directoryName,f)) ]
+	return folders
 
 def getXML(directoryName, usersDirectory):
-	pass
+	#Read all xml files in the directory
+	onlyFiles = [ os.path.join(directoryName, f) for f in os.listdir(directoryName) if f.startswith('x') and os.path.isfile(os.path.join(directoryName,f)) ]
+	#Read all checked out xml files in the users directory
+	userFolders = [ f for f in os.listdir(usersDirectory) if not os.path.isfile(os.path.join(usersDirectory,f)) ]
+	for folder in userFolders:
+		uPath = usersDirectory + '\\' + folder + '\\xml'
+		onlyFiles.extend([ os.path.join(uPath, f) for f in os.listdir(uPath) if f.startswith('x') and os.path.isfile(os.path.join(uPath,f)) ])
+	#return
+	i = 0
+	while i < len(onlyFiles):
+		f = open(onlyFiles[i], 'r', encoding="utf8")
+		dataRead = f.read()
+		if 'doc' not in onlyFiles[i].lower() and 'img' not in onlyFiles[i].lower(): 
+			#useless
+			onlyFiles.pop(i)#Filter out the found
+			i-=1
+		i+=1
+		f.close()
+	return onlyFiles
 
-def getFileNames(directoryName):
-	pass
+def getAssets(directoryName):
+	onlyAssets = [ Asset(os.path.join(directoryName, f),  False) for f in os.listdir(directoryName) if os.path.isfile(os.path.join(directoryName,f)) ]
+	folders = [ f for f in os.listdir(directoryName) if not os.path.isfile(os.path.join(directoryName,f)) ]
+	if folders:
+		for folder in folders:
+			onlyAssets.extend(getAssets(directoryName + '\\' + folder))
+	return onlyAssets
 
-def writeResults(resultsList):
-	f = open('test2-results.html', 'w+')
+def outputResults(resultsList):
+	index = cwd + '\\test2-results.html'
+	f = open(index, 'w+')
+	#HTML START
+	f.write('<html>\n')
+	f.write('<head></head>\n')
+	f.write('<body><ul>\n')
+	#WRITE DATA
+	if resultsList:
+		for result in resultsList:
+			f.write('<li>' + result.path + '</li>' +'\n')
+	#END WRITE DATA
+	f.write('<ul></body></html>\n')
 	f.close()
-	#write data
-	#index = 'G:\(Zack Carlson)\site-related\TotalValidatorTool Criminal Justice\TotalValidator.html'
+	#HTML END
 	#open html file with browser
-	webbrowser.get().open('test2-results.html')
-
+	webbrowser.get().open(index)
+#Global
+cwd = os.path.dirname(os.path.realpath(__file__))
+cms = getCMSPath()
 #MAIN SCRIPT DRIVER
 def main():
-	#Find the cms.unr.edu directory
-	cms = getCMSPath()
+	unusedAssets = []
 	if cms == '':
 		print('FAILURE to Read cms.unr.edu. Please connect to the network drive.')
 		exit()
@@ -62,20 +103,39 @@ def main():
 		print('Successfully read the cms.unr.edu directory.')
 		print('Scan Running...')
 	#Read all level 1 folders for Documents
-
+	print("Getting level one folders...")
+	folders = getLevelOneFolderNames(cms + '\\xml\\documents')
+	if not folders:
+		print('FAILURE to find the Documents folders. Aborting.')
+		exit()
 	#Read all XML files and filter the files into relevant files for searching
-
+	print("Getting list of all XML files to search...")
+	xml = getXML(cms + '\\xml', cms + '\\xml\\users')
+	if not xml:
+		print('FAILURE to find relevant XML files. Aborting.')
+		exit()
 	#Foreach primary folder
-
+	for primaryFolder in folders:
+		print('Searching '+primaryFolder+' ...')
 		#read all files names
-
+		assets = getAssets(primaryFolder)
 		#Foreach XML file
-			#Foreach file 
-				#if found remove from list and increment the index
-			#Filter out the found
-		#Append unused files to the list of results
-
-	#writeResults()
+		for xFile in xml:
+			f = open(xFile, 'r', encoding="utf8")
+			dataRead = f.read()
+			#Foreach file
+			i = 0
+			while i < len(assets):
+				dataRead = dataRead.lower()
+				if (assets[i].path in dataRead) or (assets[i].containsSpaces and assets[i].altPath in dataRead): 
+				#found 
+					assets.pop(i)#Filter out the found
+					i-=1
+				i+=1
+			f.close()
+		#extend unused files to the list of results
+		unusedAssets.extend(assets)
+	outputResults(unusedAssets)
 	print('Scan finished.')
 	exit()
 	
