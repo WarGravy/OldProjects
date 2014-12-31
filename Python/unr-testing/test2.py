@@ -9,6 +9,8 @@
 #C:\Users\zcarlson\Documents\GitHub\OldProjects\Python\unr-testing\test2.py
 import webbrowser
 import os
+import time
+start_time = time.time()
 
 #CLASSES
 class Asset():
@@ -23,6 +25,7 @@ class Asset():
 			self.type = "Document"
 		#set members
 		path = path.lower()
+		self.originalPath = path
 		self.path = path.replace('\\','/')
 		self.altPath = path.replace('\\','/')
 		self.name = os.path.basename(path)
@@ -30,6 +33,11 @@ class Asset():
 		if ' ' in path:
 			self.containsSpaces = True
 			self.altPath = self.altPath.replace(' ', '%20')
+class FolderData():
+	def __init__(self, name, total):
+		self.name = name
+		self.total = total
+		self.unusedFiles = []
 #FUNCTIONS
 def getCMSPath():
 	try:
@@ -77,19 +85,40 @@ def getAssets(directoryName):
 			onlyAssets.extend(getAssets(folder))
 	return onlyAssets
 
-def outputResults(resultsList):
+def outputResults(results, warningXML):
 	index = cwd + '\\test2-results.html'
 	f = open(index, 'w+')
 	#HTML START
 	f.write('<html>\n')
-	f.write('<head></head>\n')
-	f.write('<body><ul>\n')
+	f.write('<head>\n')
+	f.write('<title>Unused Documents and Images</title>') 
+	f.write('</head>\n')
+	f.write('<body>\n')
 	#WRITE DATA
-	if resultsList:
-		for result in resultsList:
-			f.write('<li>' + result.path + '</li>' +'\n')
+	#Time
+	f.write('<p id="time"><strong>Runtime: </strong>')
+	f.write( str(time.time() - start_time) )
+	f.write('</p>')
+	if warningXML:
+		#Warning
+		f.write('<p id="warning"><strong>Warning:</strong> Some files were detected during the scan that may have changed:</p>\n')
+		f.write('<ul>\n')
+		for warning in warningXML:
+			f.write('<li>'+ warning +'</li>\n')
+		f.write('</ul>\n')
+	#Images
+	#Documents
+	if results:
+		for key in results:
+			if 'documents' in key:
+				f.write('<h3>'+ results[key].name +'</h3>')
+				f.write('<ul>\n')
+				for unusedFile in results[key].unusedFiles:
+					f.write('<li>' + unusedFile.path + '</li>' +'\n')
+				f.write('</ul>\n')
+
 	#END WRITE DATA
-	f.write('<ul></body></html>\n')
+	f.write('</body></html>\n')
 	f.close()
 	#HTML END
 	#open html file with browser
@@ -101,31 +130,39 @@ cms = getCMSPath()
 
 #MAIN SCRIPT DRIVER
 def main():
-	unusedAssets = []
+	#variables
+	warningXML = []#list of detected changes
+	results = {}#dictionary of results
+
+	#check cms connection
 	if cms == '':
 		print('FAILURE to Read cms.unr.edu. Please connect to the network drive.')
 		exit()
 	else:
 		print('Successfully read the cms.unr.edu directory.')
 		print('Scan Running...')
+
 	#Read all level 1 folders for Documents
 	print("Getting level one folders...")
 	folders = getLevelOneFolderNames(cms + '\\xml\\documents')
 	if not folders:
 		print('FAILURE to find the Documents folders. Aborting.')
 		exit()
+
 	#Read all XML files and filter the files into relevant files for searching
 	print("Getting list of all XML files to search...")
 	xml = getXML(cms + '\\xml', cms + '\\xml\\users')
 	if not xml:
 		print('FAILURE to find relevant XML files. Aborting.')
 		exit()
+
 	#Foreach primary folder
 	for primaryFolder in folders:
 		print('Searching '+primaryFolder+' ...')
 		print('\n')
 		#read all files names
 		assets = getAssets(primaryFolder)
+		results[primaryFolder] = FolderData(os.path.basename(primaryFolder), len(assets))
 		#Foreach XML file
 		for xFile in xml:
 			try:
@@ -142,11 +179,14 @@ def main():
 					i+=1
 			except:
 				#Someone checked in a page that was originally checked out in their folder and so the file cannot be found.
-				print("\tFile no longer exists:", xFile)
+				if xFile not in warningXML:
+					print("\tFile no longer exists:", xFile)
+					warningXML.append(xFile)
 			f.close()
 		#extend unused files to the list of results
-		unusedAssets.extend(assets)
-	outputResults(unusedAssets)
+		results[primaryFolder].unusedFiles.extend(assets)#update the dictionary for the folder
+	#Output results to an html file
+	outputResults(results, warningXML)
 	print('Scan finished.')
 	exit()
 	
