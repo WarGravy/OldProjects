@@ -48,18 +48,22 @@ def getXML(directoryName, usersDirectory):
 	#Read all xml files in the directory
 	onlyFiles = [ os.path.join(directoryName, f) for f in os.listdir(directoryName) if f.startswith('x') and os.path.isfile(os.path.join(directoryName,f)) ]
 	#Read all checked out xml files in the users directory
-	userFolders = [ f for f in os.listdir(usersDirectory) if not os.path.isfile(os.path.join(usersDirectory,f)) ]
+	userFolders = [ os.path.join(usersDirectory, f) for f in os.listdir(usersDirectory) if not os.path.isfile(os.path.join(usersDirectory,f)) ]
 	for folder in userFolders:
-		uPath = usersDirectory + '\\' + folder + '\\xml'
+		uPath = folder + '\\xml'
 		onlyFiles.extend([ os.path.join(uPath, f) for f in os.listdir(uPath) if f.startswith('x') and os.path.isfile(os.path.join(uPath,f)) ])
 	#return
 	i = 0
 	while i < len(onlyFiles):
-		f = open(onlyFiles[i], 'r', encoding="utf8")
-		dataRead = f.read()
-		if 'doc' not in onlyFiles[i].lower() and 'img' not in onlyFiles[i].lower(): 
-			#useless
-			onlyFiles.pop(i)#Filter out the found
+		try:
+			f = open(onlyFiles[i], 'r', encoding="utf8")
+			dataRead = f.read()
+			if 'doc' not in dataRead.lower() and 'img' not in dataRead.lower(): 
+				#useless
+				onlyFiles.pop(i)#Filter out the irrevalent
+				i-=1
+		except:
+			onlyFiles.pop(i)#Filter out unreadable files
 			i-=1
 		i+=1
 		f.close()
@@ -67,10 +71,10 @@ def getXML(directoryName, usersDirectory):
 
 def getAssets(directoryName):
 	onlyAssets = [ Asset(os.path.join(directoryName, f),  False) for f in os.listdir(directoryName) if os.path.isfile(os.path.join(directoryName,f)) ]
-	folders = [ f for f in os.listdir(directoryName) if not os.path.isfile(os.path.join(directoryName,f)) ]
+	folders = [ os.path.join(directoryName, f) for f in os.listdir(directoryName) if not os.path.isfile(os.path.join(directoryName,f)) ]
 	if folders:
 		for folder in folders:
-			onlyAssets.extend(getAssets(directoryName + '\\' + folder))
+			onlyAssets.extend(getAssets(folder))
 	return onlyAssets
 
 def outputResults(resultsList):
@@ -90,9 +94,11 @@ def outputResults(resultsList):
 	#HTML END
 	#open html file with browser
 	webbrowser.get().open(index)
+
 #Global
 cwd = os.path.dirname(os.path.realpath(__file__))
 cms = getCMSPath()
+
 #MAIN SCRIPT DRIVER
 def main():
 	unusedAssets = []
@@ -117,21 +123,26 @@ def main():
 	#Foreach primary folder
 	for primaryFolder in folders:
 		print('Searching '+primaryFolder+' ...')
+		print('\n')
 		#read all files names
 		assets = getAssets(primaryFolder)
 		#Foreach XML file
 		for xFile in xml:
-			f = open(xFile, 'r', encoding="utf8")
-			dataRead = f.read()
-			#Foreach file
-			i = 0
-			while i < len(assets):
-				dataRead = dataRead.lower()
-				if (assets[i].path in dataRead) or (assets[i].containsSpaces and assets[i].altPath in dataRead): 
-				#found 
-					assets.pop(i)#Filter out the found
-					i-=1
-				i+=1
+			try:
+				f = open(xFile, 'r', encoding="utf8")
+				dataRead = f.read()
+				#Foreach file
+				i = 0
+				while i < len(assets):
+					dataRead = dataRead.lower()
+					if (assets[i].path in dataRead) or (assets[i].containsSpaces and assets[i].altPath in dataRead): 
+					#found 
+						assets.pop(i)#Filter out the found
+						i-=1
+					i+=1
+			except:
+				#Someone checked in a page that was originally checked out in their folder and so the file cannot be found.
+				print("\tFile no longer exists:", xFile)
 			f.close()
 		#extend unused files to the list of results
 		unusedAssets.extend(assets)
