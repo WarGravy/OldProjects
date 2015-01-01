@@ -115,6 +115,7 @@ namespace SortingAlgorithms.MergeSort
                 System.Console.Write(e.ToString());
                 System.Console.Write(" ");
             }
+            System.Console.Write("\n");
         }
     }
 }

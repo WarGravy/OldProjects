@@ -20,6 +20,8 @@ namespace SortingAlgorithms
             //Merge Sort Test
             MergeSort.MergeSort.Test();
 
+            //Quick Sort Test
+            QuickSort.QuickSort.Test();
             //Pause
             System.Console.ReadLine();
         }
