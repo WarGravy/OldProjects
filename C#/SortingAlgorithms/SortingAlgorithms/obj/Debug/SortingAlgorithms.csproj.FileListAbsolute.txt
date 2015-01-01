@@ -1,0 +1,5 @@
+C:\Users\Zack\Documents\GitHub\OldProjects\C#\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.exe.config
+C:\Users\Zack\Documents\GitHub\OldProjects\C#\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.exe
+C:\Users\Zack\Documents\GitHub\OldProjects\C#\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.pdb
+C:\Users\Zack\Documents\GitHub\OldProjects\C#\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.exe
+C:\Users\Zack\Documents\GitHub\OldProjects\C#\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.pdb
