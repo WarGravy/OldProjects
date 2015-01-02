@@ -10,6 +10,7 @@
 import webbrowser
 import os
 import time
+from multiprocessing import Process
 start_time = time.time()
 
 #CLASSES
@@ -77,27 +78,30 @@ def getXML(directoryName, usersDirectory):
 		f.close()
 	return onlyFiles
 
-def getAssets(directoryName):
-	onlyAssets = [ Asset(os.path.join(directoryName, f),  False) for f in os.listdir(directoryName) if os.path.isfile(os.path.join(directoryName,f)) ]
+def getAssets(directoryName, isImages):
+	onlyAssets = [ Asset(os.path.join(directoryName, f),  isImages) for f in os.listdir(directoryName) if os.path.isfile(os.path.join(directoryName,f)) ]
 	folders = [ os.path.join(directoryName, f) for f in os.listdir(directoryName) if not os.path.isfile(os.path.join(directoryName,f)) ]
 	if folders:
 		for folder in folders:
-			onlyAssets.extend(getAssets(folder))
+			onlyAssets.extend(getAssets(folder, isImages))
 	return onlyAssets
 
-def outputResults(results, warningXML):
-	index = cwd + '\\test2-results.html'
+def outputResults(results, warningXML, title):
+	index = cwd + '\\test2-'+title.lower().replace(' ', '-')+'.html'
 	f = open(index, 'w+')
 	#HTML START
 	f.write('<html>\n')
 	f.write('<head>\n')
-	f.write('<title>Unused Documents and Images</title>') 
+	f.write('<title>')
+	f.write(str(title))
+	f.write('</title>') 
 	f.write('</head>\n')
 	f.write('<body>\n')
 	#WRITE DATA
 	#Time
 	f.write('<p id="time"><strong>Runtime: </strong>')
-	f.write( str(time.time() - start_time) )
+	f.write( str((time.time() - start_time) / 60 ))#time provided in seconds converted to minutes
+	f.write(' minutes')
 	f.write('</p>')
 	if warningXML:
 		#Warning
@@ -106,16 +110,14 @@ def outputResults(results, warningXML):
 		for warning in warningXML:
 			f.write('<li>'+ warning +'</li>\n')
 		f.write('</ul>\n')
-	#Images
-	#Documents
+	#Documents/Images
 	if results:
 		for key in results:
-			if 'documents' in key:
-				f.write('<h3>'+ results[key].name +'</h3>')
-				f.write('<ul>\n')
-				for unusedFile in results[key].unusedFiles:
-					f.write('<li>' + unusedFile.path + '</li>' +'\n')
-				f.write('</ul>\n')
+			f.write('<h3>'+ results[key].name +'</h3>')
+			f.write('<ul>\n')
+			for unusedFile in results[key].unusedFiles:
+				f.write('<li>' + unusedFile.path + '</li>' +'\n')
+			f.write('</ul>\n')
 
 	#END WRITE DATA
 	f.write('</body></html>\n')
@@ -124,36 +126,22 @@ def outputResults(results, warningXML):
 	#open html file with browser
 	webbrowser.get().open(index)
 
-#Global
-cwd = os.path.dirname(os.path.realpath(__file__))
-cms = getCMSPath()
-
-#MAIN SCRIPT DRIVER
-def main():
+def search(xml, isImages = False):
 	#variables
+	if isImages:
+		assetsName = 'images'
+		outputName = 'Unused Images'
+	else:
+		assetsName = 'documents'
+		outputName = 'Unused Documents'
 	warningXML = []#list of detected changes
 	results = {}#dictionary of results
 
-	#check cms connection
-	if cms == '':
-		print('FAILURE to Read cms.unr.edu. Please connect to the network drive.')
-		exit()
-	else:
-		print('Successfully read the cms.unr.edu directory.')
-		print('Scan Running...')
-
-	#Read all level 1 folders for Documents
+	#Read all level 1 folders for Documents/Images
 	print("Getting level one folders...")
-	folders = getLevelOneFolderNames(cms + '\\xml\\documents')
+	folders = getLevelOneFolderNames(cms + '\\xml\\' + assetsName)
 	if not folders:
-		print('FAILURE to find the Documents folders. Aborting.')
-		exit()
-
-	#Read all XML files and filter the files into relevant files for searching
-	print("Getting list of all XML files to search...")
-	xml = getXML(cms + '\\xml', cms + '\\xml\\users')
-	if not xml:
-		print('FAILURE to find relevant XML files. Aborting.')
+		print('FAILURE to find the ' + assetsName + ' folders. Aborting.')
 		exit()
 
 	#Foreach primary folder
@@ -161,7 +149,7 @@ def main():
 		print('Searching '+primaryFolder+' ...')
 		print('\n')
 		#read all files names
-		assets = getAssets(primaryFolder)
+		assets = getAssets(primaryFolder, isImages)
 		results[primaryFolder] = FolderData(os.path.basename(primaryFolder), len(assets))
 		#Foreach XML file
 		for xFile in xml:
@@ -186,7 +174,34 @@ def main():
 		#extend unused files to the list of results
 		results[primaryFolder].unusedFiles.extend(assets)#update the dictionary for the folder
 	#Output results to an html file
-	outputResults(results, warningXML)
+	outputResults(results, warningXML, outputName)
+
+#Global
+cwd = os.path.dirname(os.path.realpath(__file__))
+cms = getCMSPath()
+
+#MAIN SCRIPT DRIVER
+def main():
+	#check cms connection
+	if cms == '':
+		print('FAILURE to Read cms.unr.edu. Please connect to the network drive.')
+		exit()
+	else:
+		print('Successfully read the cms.unr.edu directory.')
+		print('Scan Running...')
+
+	#Read all XML files and filter the files into relevant files for searching
+	print("Getting list of all XML files to search...")
+	xml = getXML(cms + '\\xml', cms + '\\xml\\users')
+	if not xml:
+		print('FAILURE to find relevant XML files. Aborting.')
+		exit()
+
+	#fork the current process:- parent is images, child is documents
+	p = Process(target=search, args=(xml, False))
+	p.start()
+	search(xml, True)
+	p.join()
 	print('Scan finished.')
 	exit()
 	
