@@ -92,11 +92,15 @@ def outputResults(results, warningXML, title):
 	#HTML START
 	f.write('<html>\n')
 	f.write('<head>\n')
+	f.write('<meta charset="utf-8">\n')
+	f.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">\n')
+	f.write('<link href="./test2-assets/css/bootstrap.min.css" rel="stylesheet"/>\n')
 	f.write('<title>')
 	f.write(str(title))
-	f.write('</title>') 
+	f.write('</title>\n') 
 	f.write('</head>\n')
 	f.write('<body>\n')
+	f.write('<div class="container">\n')
 	#WRITE DATA
 	#Time
 	f.write('<p id="time"><strong>Runtime: </strong>')
@@ -112,17 +116,36 @@ def outputResults(results, warningXML, title):
 		f.write('</ul>\n')
 	#Documents/Images
 	if results:
+		f.write('<div role="tabpanel"><ul class="nav nav-tabs" role="tablist">\n')
+		#Tabs
 		for key in results:
-			f.write('<h3>'+ results[key].name +'</h3>')
+			f.write('<li role="presentation" class="active"><a href="#'+ results[key].name.replace(' ', '-') +'" aria-controls="'+ results[key].name.replace(' ', '-') +'" role="tab" data-toggle="tab">'+ results[key].name +'</a></li>\n')
+		
+		#Tab content
+		f.write('</ul><div class="tab-content">\n')
+		for key in results:
+			f.write('<div role="tabpanel" class="tab-pane active" id="'+ results[key].name.replace(' ', '-') +'">')
+			f.write('<p class="unused-count"><strong>Unused Files: </strong>')
+			f.write( str(len(results[key].unusedFiles)))
+			f.write('</p>')
+			f.write('<p class="total-count"><strong>Total Files Searched: </strong>')
+			f.write( str(results[key].total))
+			f.write('</p>')
 			f.write('<ul>\n')
 			for unusedFile in results[key].unusedFiles:
 				f.write('<li>' + unusedFile.path + '</li>' +'\n')
-			f.write('</ul>\n')
+			f.write('</ul></div>\n')
 
 	#END WRITE DATA
+	f.write('</div></div></div>\n')
+	f.write('<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->\n')
+	f.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>\n')
+	f.write('<!-- Include all compiled plugins (below), or include individual files as needed -->\n')
+	f.write('<script src="./test2-assets/js/bootstrap.min.js" type="javascript"></script>\n')
 	f.write('</body></html>\n')
 	f.close()
 	#HTML END
+	print ('outputting process with id: ', os.getpid())
 	#open html file with browser
 	webbrowser.get().open(index)
 
