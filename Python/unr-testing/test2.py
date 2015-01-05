@@ -94,7 +94,7 @@ def outputResults(results, warningXML, title):
 	f.write('<head>\n')
 	f.write('<meta charset="utf-8">\n')
 	f.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">\n')
-	f.write('<link href="./test2-assets/css/bootstrap.min.css" rel="stylesheet"/>\n')
+	f.write('<link href="./test2-assets/css/bootstrap.min.css" rel="stylesheet"/>\n<link href="./test2-assets/css/site.css" rel="stylesheet"/>\n')
 	f.write('<title>')
 	f.write(str(title))
 	f.write('</title>\n') 
@@ -118,13 +118,23 @@ def outputResults(results, warningXML, title):
 	if results:
 		f.write('<div role="tabpanel"><ul class="nav nav-tabs" role="tablist">\n')
 		#Tabs
+		iActive = 0;
 		for key in results:
-			f.write('<li role="presentation" class="active"><a href="#'+ results[key].name.replace(' ', '-') +'" aria-controls="'+ results[key].name.replace(' ', '-') +'" role="tab" data-toggle="tab">'+ results[key].name +'</a></li>\n')
-		
+			f.write('<li role="presentation" ')
+			if iActive == 0:
+				f.write('class="active"')
+				iActive += 1
+			f.write('><a href="#'+ results[key].name.replace(' ', '-') +'" aria-controls="'+ results[key].name.replace(' ', '-') +'" role="tab" data-toggle="tab">'+ results[key].name +'</a></li>\n')
+		f.write('</div>\n')
 		#Tab content
+		iActive = 0;
 		f.write('</ul><div class="tab-content">\n')
 		for key in results:
-			f.write('<div role="tabpanel" class="tab-pane active" id="'+ results[key].name.replace(' ', '-') +'">')
+			f.write('<div role="tabpanel" class="tab-pane')
+			if iActive == 0:
+				f.write(' active')
+				iActive += 1
+			f.write('" id="'+ results[key].name.replace(' ', '-') +'">')
 			f.write('<p class="unused-count"><strong>Unused Files: </strong>')
 			f.write( str(len(results[key].unusedFiles)))
 			f.write('</p>')
@@ -141,11 +151,10 @@ def outputResults(results, warningXML, title):
 	f.write('<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->\n')
 	f.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>\n')
 	f.write('<!-- Include all compiled plugins (below), or include individual files as needed -->\n')
-	f.write('<script src="./test2-assets/js/bootstrap.min.js" type="javascript"></script>\n')
+	f.write('<script src="./test2-assets/js/bootstrap.min.js"></script>\n')
 	f.write('</body></html>\n')
 	f.close()
 	#HTML END
-	print ('outputting process with id: ', os.getpid())
 	#open html file with browser
 	webbrowser.get().open(index)
 
@@ -169,8 +178,7 @@ def search(xml, isImages = False):
 
 	#Foreach primary folder
 	for primaryFolder in folders:
-		print('Searching '+primaryFolder+' ...')
-		print('\n')
+		print('Searching '+primaryFolder+' ...\n')
 		#read all files names
 		assets = getAssets(primaryFolder, isImages)
 		results[primaryFolder] = FolderData(os.path.basename(primaryFolder), len(assets))
