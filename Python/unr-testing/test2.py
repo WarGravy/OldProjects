@@ -16,6 +16,10 @@ start_time = time.time()
 #CLASSES
 class Asset():
 	def __init__(self, pathGiven, isImage = False):
+		#attributes of file
+		self.size = os.path.getsize(pathGiven)
+		stats = os.stat(pathGiven)
+		self.lastModified = time.localtime(stats[8])
 		#Clean path
 		path = pathGiven[pathGiven.index(cms + '\\xml\\') + len(cms + '\\xml\\'):]
 		if isImage:
@@ -180,7 +184,7 @@ def search(xml, isImages = False):
 
 	#Foreach primary folder
 	for primaryFolder in folders:
-		print('Searching '+primaryFolder+' ...\n')
+		print('Searching '+primaryFolder+'...')
 		#read all files names
 		assets = getAssets(primaryFolder, isImages)
 		results[primaryFolder] = FolderData(os.path.basename(primaryFolder), len(assets))
