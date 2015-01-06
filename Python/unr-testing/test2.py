@@ -102,21 +102,9 @@ def outputResults(results, warningXML, title):
 	f.write('<body>\n')
 	f.write('<div class="container">\n')
 	#WRITE DATA
-	#Time
-	f.write('<p id="time"><strong>Runtime: </strong>')
-	f.write( str((time.time() - start_time) / 60 ))#time provided in seconds converted to minutes
-	f.write(' minutes')
-	f.write('</p>')
-	if warningXML:
-		#Warning
-		f.write('<p id="warning"><strong>Warning:</strong> Some files were detected during the scan that may have changed:</p>\n')
-		f.write('<ul>\n')
-		for warning in warningXML:
-			f.write('<li>'+ warning +'</li>\n')
-		f.write('</ul>\n')
 	#Documents/Images
 	if results:
-		f.write('<div role="tabpanel"><ul class="nav nav-tabs" role="tablist">\n')
+		f.write('<div id="sticky-nav" class="col-md-4 col-sm-4 col-xs-12 pull-right" role="tabpanel">\n<ul class="nav nav-pills nav-stacked" role="tablist">\n')
 		#Tabs
 		iActive = 0;
 		for key in results:
@@ -125,34 +113,48 @@ def outputResults(results, warningXML, title):
 				f.write('class="active"')
 				iActive += 1
 			f.write('><a href="#'+ results[key].name.replace(' ', '-') +'" aria-controls="'+ results[key].name.replace(' ', '-') +'" role="tab" data-toggle="tab">'+ results[key].name +'</a></li>\n')
+		f.write('</ul>\n</div>\n')
+		f.write('<div class="global-stats">\n')
+		#Time
+		f.write('<p id="time"><strong>Runtime: </strong>')
+		f.write( str((time.time() - start_time) / 60 ))#time provided in seconds converted to minutes
+		f.write(' minutes')
+		f.write('</p>\n')
+		#Warning
+		if warningXML:
+			f.write('<p id="warning"><strong>Warning:</strong> Some files were detected during the scan that may have changed:</p>\n')
+			f.write('<ul>\n')
+			for warning in warningXML:
+				f.write('<li>'+ warning +'</li>\n')
+			f.write('</ul>\n')
 		f.write('</div>\n')
 		#Tab content
 		iActive = 0;
-		f.write('</ul><div class="tab-content">\n')
-		for key in results:
+		f.write('<div class="tab-content">\n')
+		for key in sorted(results):
 			f.write('<div role="tabpanel" class="tab-pane')
 			if iActive == 0:
 				f.write(' active')
 				iActive += 1
-			f.write('" id="'+ results[key].name.replace(' ', '-') +'">')
+			f.write('" id="'+ results[key].name.replace(' ', '-') +'">\n')
 			f.write('<p class="unused-count"><strong>Unused Files: </strong>')
 			f.write( str(len(results[key].unusedFiles)))
-			f.write('</p>')
+			f.write('</p>\n')
 			f.write('<p class="total-count"><strong>Total Files Searched: </strong>')
 			f.write( str(results[key].total))
-			f.write('</p>')
+			f.write('</p>\n')
 			f.write('<ul>\n')
 			for unusedFile in results[key].unusedFiles:
 				f.write('<li>' + unusedFile.path + '</li>' +'\n')
-			f.write('</ul></div>\n')
+			f.write('</ul>\n</div>\n')
 
 	#END WRITE DATA
-	f.write('</div></div></div>\n')
+	f.write('</div>\n</div>\n</div>\n')
 	f.write('<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->\n')
 	f.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>\n')
 	f.write('<!-- Include all compiled plugins (below), or include individual files as needed -->\n')
 	f.write('<script src="./test2-assets/js/bootstrap.min.js"></script>\n')
-	f.write('</body></html>\n')
+	f.write('</body>\n</html>\n')
 	f.close()
 	#HTML END
 	#open html file with browser
