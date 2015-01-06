@@ -219,7 +219,6 @@ def search(xml, isImages = False):
 			f.close()
 		#extend unused files to the list of results
 		results[primaryFolder].unusedFiles.extend(assets)#update the dictionary for the folder
-		break
 	#Output results to an html file
 	outputResults(results, warningXML, outputName)
 
