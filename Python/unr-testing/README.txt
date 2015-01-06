@@ -1,8 +1,4 @@
 -----------------------------------------------------------------
-TEST 1
------------------------------------------------------------------
-Dependencies: Python 3.4.2
-
 How to set up Python to be used in the command line on Windows 7
 -----------------------------------------------------------------
 1. Download Python 3 from here: https://www.python.org/downloads/
@@ -21,6 +17,11 @@ How to set up Python to be used in the command line on Windows 7
 
 DONE! You can now use the Python interpreter from the cmd window by 
 typing python.
+-----------------------------------------------------------------
+TEST 1
+-----------------------------------------------------------------
+Dependencies: 
+* Python 3.4.2
 
 Working with the Script
 -----------------------------------------------------------------
@@ -39,3 +40,28 @@ the appropriate line to swap between testing on staging and production.
 easy access. To run the script type the following into the cmd window:
 
 >python C:/YOUR_PATH/test1.py
+
+-----------------------------------------------------------------
+TEST 2
+-----------------------------------------------------------------
+Dependencies: 
+* Python 3.4.2
+* Read Permissions to \\cms.unr.edu
+* The test2-assets folder included
+
+Working with the Script
+-----------------------------------------------------------------
+*You don't need to know how to write python code to work with this 
+script.
+
+*After running the script, it will open up two html files in your browser
+and print to the console "Scan Finished." Don't worry if only one file
+opens in your default browser, it is because this script is using 
+multi-processing techniques and the images scan sometimes takes longer
+than the documents scan due to size.
+
+*At the top of the script on line 9 I have saved the file location for 
+easy access. To run the script type the following into the cmd window:
+
+>python C:/YOUR_PATH/test2.py
+-----------------------------------------------------------------
