@@ -6,6 +6,7 @@
 	background-color: white;
 	border: 2px solid;
 	border-radius:25px;
+	margin-bottom:200px!important;
 
 }
 
@@ -18,6 +19,13 @@ body{
 }
 
 
+.tab-pane ul li small{
+	margin-left:30px;
+	color:#999;
+}
+.tab-pane ul li{
+	margin-bottom:17px;
+}
 #sticky-nav{
 	padding-bottom:20px;
 	position: relative;

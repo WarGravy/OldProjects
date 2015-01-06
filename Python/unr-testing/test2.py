@@ -17,7 +17,13 @@ start_time = time.time()
 class Asset():
 	def __init__(self, pathGiven, isImage = False):
 		#attributes of file
-		self.size = os.path.getsize(pathGiven)
+		size = os.path.getsize(pathGiven)
+		size = size / 1000
+		if size > 1000:
+			size = size / 1000
+			self.size = str(size) + ' MB'
+		else:
+			self.size = str(size) + ' KB'
 		stats = os.stat(pathGiven)
 		self.lastModified = time.localtime(stats[8])
 		#Clean path
@@ -150,7 +156,9 @@ def outputResults(results, warningXML, title):
 			f.write('</p>\n')
 			f.write('<ul>\n')
 			for unusedFile in results[key].unusedFiles:
-				f.write('<li>' + unusedFile.path + '</li>' +'\n')
+				f.write('<li>' + unusedFile.path)
+				f.write('<br/><small><em>'+unusedFile.size+' | Last Modified: '+time.strftime("%a, %d %b %Y %I:%M:%S %p", unusedFile.lastModified)+'</em></small>')
+				f.write('</li>\n')
 			f.write('</ul>\n</div>\n')
 
 	#END WRITE DATA
@@ -211,6 +219,7 @@ def search(xml, isImages = False):
 			f.close()
 		#extend unused files to the list of results
 		results[primaryFolder].unusedFiles.extend(assets)#update the dictionary for the folder
+		break
 	#Output results to an html file
 	outputResults(results, warningXML, outputName)
 
