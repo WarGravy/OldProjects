@@ -19,7 +19,6 @@ body{
 
 
 #sticky-nav{
-	margin-top:119px;
 	padding-bottom:20px;
 	position: relative;
 }
@@ -32,15 +31,14 @@ body{
 .global-stats{
 	padding:10px 15px;
 	color:#000;
-	margin-top:120px;
 	margin-bottom:20px;
 	border-radius:5px;
 	word-wrap: break-word;
+	border: 2px solid #003366;
 }
 
 .tab-content{
 	padding:10px 15px;
-	background-color:#eee;
 	width:66%;
 	border-radius:5px;
 }
@@ -50,22 +48,22 @@ background-color:#003366;
 @media only screen and (max-width: 768px) {
     #sticky-nav{
     	float:none!important;
+    	margin-top:140px;
     }
-    .global-stats{
+    .global-stats, .tab-content{
     	margin-left:15px!important;
     	margin-top:10px!important;
     	margin-right:15px!important;
     	display:block;
     	position:relative;
-    	border: 2px solid #003366;
-    }
-    .tab-content{
-    	width:100%;
     }
 }
 @media only screen and (min-width: 768px) {
-    .global-stats{
+    .global-stats, .tab-content{
     	width:66%;
+    }
+    .global-stats, #sticky-nav{
+    	margin-top:140px;
     }
 }
 

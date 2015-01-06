@@ -97,6 +97,7 @@ def outputResults(results, warningXML, title):
 	f.write('<html>\n')
 	f.write('<head>\n')
 	f.write('<meta charset="utf-8">\n')
+	f.write('<meta name="robots" content="noindex, nofollow">\n')
 	f.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">\n')
 	f.write('<link href="./test2-assets/css/bootstrap.min.css" rel="stylesheet"/>\n<link href="./test2-assets/css/site.css" rel="stylesheet"/>\n')
 	f.write('<title>')
