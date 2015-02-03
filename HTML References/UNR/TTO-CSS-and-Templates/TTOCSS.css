@@ -1,0 +1,532 @@
+body
+{
+	margin:0px;
+	padding:0px;
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-headerbg3.png');
+	background-repeat:no-repeat;
+	background-position:center top; 
+	background-color:#EEEEEE;
+	font-size:small;
+	font-family:lucida grande;
+}
+
+
+.main_border
+{
+	width:1000px;
+}
+
+.logo
+{
+	margin-left:55px;
+        margin-top: 40px;
+}
+
+a.header_link:link, a.header_link:visited, a.header_link:active, a.header_link:hover
+{
+	display:block;
+	width:82px;
+	padding:8px 0px 7px 0px;
+	color:#ffffff;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+}
+
+.content_box
+{
+	margin-left:5px;
+}
+
+.content_top
+{
+	
+	width:991px;
+	height:1px;
+}
+
+.content_middle
+{
+	width:989px;
+}
+
+.content_bottom
+{
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+	background-repeat:repeat-x;
+	width:991px;
+	color:#000000;
+}
+.content_bottom2
+{
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+	background-repeat:no-repeat;
+	color:#000000;
+}
+
+.footer
+{
+	color:#d1d6d9;
+	background-color:#000000;
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+	background-repeat:repeat-x;
+}
+
+a.footer_link:link, a.footer_link:hover, a.footer_link:active, a.footer_link:visited
+{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+.left_content
+{
+	background-color:#ffffff;
+	width:221px;
+	margin-left:2px;
+}
+
+.left_content_box
+{
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.right_content
+{
+	background-color:#ffffff;
+	width:767px;
+}
+
+.right_content_box
+{
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.categories_title
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#0B167D;
+	padding:3px;
+}
+
+.category_list
+{
+	margin-left:10px;
+}
+
+.category_list a
+{
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.category_list span
+{
+	color:#0D2DA4;
+}
+
+.technology_search_title
+{
+	font-size:22px;
+	font-weight:bold;
+	color:#0B167D;
+}
+
+.technology_search_description
+{
+	color:#454545;
+	font-size:14px;
+}
+
+.search_for_technologies
+{
+	font-size:16px;
+	color:#25363d;
+	font-weight:bold;
+}
+
+.technology_search_box input[type="text"]
+{
+	margin-left:5px;
+    font-size:22px;
+    padding:5px;
+}
+
+.technology_search_box input[type="button"]
+{
+	font-size:16px;
+	border:solid 1px #3a4e69;
+	background-color:#3a4e69;
+	color:#ffffff;
+	padding:8px;
+	font-family:Verdana;
+	position:absolute;
+	margin-top:0px;
+	font-weight:bold;
+}
+
+.advanced_search
+{
+	margin-left:460px;
+}
+
+a.advanced_search_link:link, a.advanced_search_link:hover, a.advanced_search_link:active, a.advanced_search_link:visited
+{
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.featured_technology_title
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#0B167D;
+	padding:3px;
+}
+
+.featured_technology
+{
+	width:180px;
+	margin-left:10px;
+}
+
+.featured_technology a
+{
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.latest_technologies_posted_title
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#0B167D;
+	padding:3px;
+}
+
+.latest_technologies_box
+{
+	width:340px;
+}
+
+.keywords_title
+{
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#0B167D;
+	padding:3px;
+}
+
+.keywords_box
+{
+	width:340px;
+}
+
+.latest_technologies
+{
+	width:340px;
+}
+
+.latest_technologies a
+{
+	font-size:12px;
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.keywords
+{
+	width:340px;
+}
+
+.keywords a
+{
+	color:#646464;
+	text-decoration:none;
+}
+
+.c_top_spacer
+{
+	height:0px;
+}
+
+.c_top
+{
+	
+}
+
+.c_middle
+{
+	border:solid 1px #c0c0c0;
+	padding:20px;
+	background-color:#ffffff;
+}
+
+.c_bottom
+{
+color:#d1d6d9;
+	background-color:#000000;
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+}
+
+.c_main_border
+{
+	width:1000px;
+}
+
+.c_logo
+{
+	margin-left:20px;
+}
+
+.c_top_logo_link_bar
+{
+	width:100%;
+	height:130px;
+}
+
+a.c_header_link:link, a.c_header_link:visited, a.c_header_link:active, a.c_header_link:hover
+{
+	display:block;
+	width:82px;
+	padding:8px 0px 7px 0px;
+	color:#ffffff;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	margin-top:25px;
+}
+
+.c_header_link_spacing
+{
+	width:7px;
+}
+
+.c_footer
+{
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+	background-repeat:repeat-x;
+	height:33px;
+}
+
+.c_footer_links 
+{
+	color:#d1d6d9;
+	background-color:#000000;
+	background-image:url('http://tto.unr.edu/prebuilt/tto/tto-footer.jpg');
+}
+
+a.c_footer_link:link, a.c_footer_link:hover, a.c_footer_link:active, a.c_footer_link:visited
+{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+.c_rights
+{
+	color:#ffffff;
+}
+
+.c_advanced_search_left_padding
+{
+	width:30px;
+}
+
+.c_tp_right_column
+{
+	border-right:solid 1px #c0c0c0;
+}
+
+.c_tp_web_published
+{
+	display:block;
+}
+
+.c_tp_web_published h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_description
+{
+	display:block;
+}
+
+.c_tp_description h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_applications
+{
+	display:block;
+}
+
+.c_tp_applications h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_features
+{
+	display:block;
+}
+
+.c_tp_features h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_ip_status
+{
+	display:block;
+}
+
+.c_tp_ip_status h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_keywords
+{
+	display:block;
+}
+
+.c_tp_keywords h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_direct_link
+{
+	display:block;
+}
+
+.c_tp_direct_link h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_category
+{
+	display:block;
+}
+
+.c_tp_category h4
+{
+	margin:0px;
+	padding:0px;
+	margin-bottom:3px;
+	font-size:small;
+	font-weight:bold;
+}
+
+.c_tp_right_links
+{
+	margin-left:5px;
+}
+
+.c_tp_bookmark
+{
+}
+
+.c_tp_pdf
+{
+}
+
+.c_tp_print
+{
+}
+
+.c_tp_contact
+{
+}
+
+.c_tp_inventors
+{
+}
+
+/* version 3 new css classes */
+.advanced_search_box
+{
+	width:450px;
+}
+
+.c_content
+{
+	background-color:#ffffff; 
+	padding:20px; 
+	border:solid 1px #c0c0c0;
+}
+
+.search_keyword_highlight
+{
+	font-weight:bold;
+	background-color:#efefef;
+}
+
+/* css classes for patent */
+
+.c_tp_patent 
+{
+	border-width: 1px;
+    border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse:collapse;
+	background-color: white;
+}
+.c_tp_patent th 
+{
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+}
+.c_tp_patent td 
+{
+	border-width: 1px ;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+}

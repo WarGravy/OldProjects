@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Server Error</title>
+	<meta name="generator" content="BBEdit 10.5" />
+	<style>
+	.message{
+	background-color: rgba(0,46,98, .70);
+	margin-left: 10%;
+	position: fixed;
+	bottom: 20%;
+	max-width: 700px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	}
+	.message p{
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	text-align: center;
+	}	
+	.bgImage {
+	position:fixed;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	z-index: -10;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	}
+	
+	@media only screen and (max-width: 767px){
+		.message{
+		margin-left: 10%!important;
+		margin-right: 10%!important;
+		}
+		.message p{
+		font-size: 16px;
+		}
+		.bgImage{
+		min-height:100%;
+		min-width:100%;
+		max-width: 300%;
+		max-height:150%;
+		}
+		.block-n{
+		text-align:center;
+		}
+	}
+	@media only screen and (max-height: 649px){
+		.message{
+		bottom:2%!important;
+		}
+	}
+	@media only screen and (min-height: 650px){
+		.block-n img{
+		margin-top: 60px;
+		}
+	}
+	@media only screen and (min-width:768px) and (max-width:979px){
+	.bgImage{
+		min-height:100%;
+		min-width:100%;
+		max-width: 150%;
+		max-height:150%;
+		}
+	}
+	@media only screen and (min-width: 980px){
+	.bgImage{
+		min-height:100%;
+		min-width:100%;
+		max-width:130%;
+		max-height:120%;
+		}
+	}
+	@media only screen and (min-width: 768px){
+	.block-n img{
+	float: right;
+	margin-right: 10%;
+	margin-top: 40px;
+	}
+	}
+}
+	</style>
+</head>
+<body>
+<img class="bgImage" src="super.jpeg" />
+<div class="block-n">
+<img src="blockn-01.png" />
+</div>
+<div class="message">
+	<p>
+		Well, that's embarrassing. Looks like our website is down.
+	<p>
+	<p>
+		But no need to worry... our superheroes are on the way.
+	</p>
+	<p>
+		Check back in a flash.
+	</p>
+</div>
+
+</body>
+</html>

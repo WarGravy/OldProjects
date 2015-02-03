@@ -1,0 +1,72 @@
+Zack's Shortcut Grep Searches:
+
+("mailto:"|owa\.unr\.edu/owa/redir\.aspx|(inlineTextHighlight|sendori\.com|www_objectify_ca))
+-Empty Mailto, bad owa links, and malware
+
+
+((Mso(-|Normal|PlainText)|w:WordDocument|<xml>|tab-stops:|name="_GoBack"|ctl00_|--\[if|(&|&amp;)(middot|bull))|<span>) 
+-empty span and MSO
+----------------------------------------
+Master List of Items to Search For
+	
+Formatting
+	
+	University of Nevada-Reno
+	 UNR 
+	(775|702)(-|\.| )
+
+Single Patters to Search For
+	
+	"mailto:"						(empty mailto - not picked up by siteimprove)
+	&nbsp;&nbsp;					(should never be double spaces - most likely someone was lining things up with the spacebar)
+	<sup>TM</sup> 					(replace with &trade;)
+	-- 								(replace with &mdash;)
+	</ul>\r<ul>						(two lists next to each other)
+	<span>							(Span with no class: serves no purpose - probably left over from a spell check error)
+	
+	owa.unr.edu/owa/redir.aspx		(Somebody copied a link outlook - for some reason not marked as a broken link by SI)
+
+
+
+Malware: These are all put in via malware.
+
+	(inlineTextHighlight|sendori\.com|www_objectify_ca)
+
+Subdomains not in use anymore (others such as "business.unr.edu" is still in use on sub pages) 
+
+	(calendar|emba|reslife|ntf).unr.edu
+	http://www.mines.unr.edu/mackay
+
+Document or images links dones as external
+	www.unr.edu/(Images|Documents)
+
+MSWord Copy/Paste
+
+	(Mso(-|Normal|PlainText)|w:WordDocument|<xml>|tab-stops:|name="_GoBack"|ctl00_|--\[if|(&|&amp;)(middot|bull))
+
+Bad CSS Formatting - May be OK on One Off Design
+	
+	line-height
+	font-(size|family)
+	background-(clip|origin|attachment):
+	class="(Default|Apple-converted-space|Apple-style-span|c2|i1)"
+	text-(align|decoration): (justify|left|underline)
+
+"Bad" Link text
+
+	>((| |\s|\r|\n|\t|\.|&nbsp;|<br />|&gt;|&lt;)+)(click|click here|please click here|here|link|this link|following this link|form|pdf|website|more|read more|learn more|learn more here|more information|more information here|download|online|visit us online|available online)((| |\s|\r|\n|\t|\.|&nbsp;|<br />|&gt;|&lt;)+)</a>
+
+Search for empty containers: First link searches for empties, second searches for unnessary BR tags
+
+	<(p|h3|h4|h5|h6|em|strong|div|span|li|ol|ul|dd|dl|dt|blockquote|pre)>((| |\s|\r|\n|\t|\.|,|!|\?|\"|\'|&nbsp;|<br />)+)</(p|h3|h4|h5|h6|em|strong|div|span|li|ol|ul|dd|dl|dt|blockquote|pre)>
+	
+	(<(p|h3|h4|h5|h6)><br />)|(<br /></(p|h3|h4|h5|h6)>)
+	
+Search for links where the link text is the URL (i.e. <a href="http://www.unr.edu">http://www.unr.edu</a>). Gives lots of false flags, but gets you there eventually.
+
+	<BodyCopy(?s).*?>(www\.|http)(?s).*?</BodyCopy>
+	
+OTHER SEARCHES
+
+<NNDetail(?s).*?class=				Will tell you first instance of class= on any news detail page >
+	
