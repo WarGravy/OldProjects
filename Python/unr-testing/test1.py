@@ -116,11 +116,11 @@ def main():
 		print("Opening Degree Pages")
 		print("-----------------------------------------------")
 		degrees(baseHref)
-	if True:
+	if False:
 		print("Opening Section Fronts")
 		print("-----------------------------------------------")
 		sectionFronts(baseHref)
-	if True:
+	if False:
 		print("Opening Nevada Today Pages")
 		print("-----------------------------------------------")
 		nvToday(baseHref)

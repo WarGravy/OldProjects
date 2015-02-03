@@ -199,24 +199,27 @@ def search(xml, isImages = False):
 		results[primaryFolder] = FolderData(os.path.basename(primaryFolder), len(assets))
 		#Foreach XML file
 		for xFile in xml:
-			try:
-				f = open(xFile, 'r', encoding="utf8")
-				dataRead = f.read()
-				#Foreach file
-				i = 0
-				while i < len(assets):
-					dataRead = dataRead.lower()
-					if (assets[i].path in dataRead) or (assets[i].containsSpaces and assets[i].altPath in dataRead): 
-					#found 
-						assets.pop(i)#Filter out the found
-						i-=1
-					i+=1
-			except:
-				#Someone checked in a page that was originally checked out in their folder and so the file cannot be found.
-				if xFile not in warningXML:
-					print("\tFile no longer exists:", xFile)
-					warningXML.append(xFile)
-			f.close()
+			if len(assets) > 0:	
+				try:
+					f = open(xFile, 'r', encoding="utf8")
+					dataRead = f.read()
+					#Foreach file
+					i = 0
+					while i < len(assets):
+						dataRead = dataRead.lower()
+						if (assets[i].path in dataRead) or (assets[i].containsSpaces and assets[i].altPath in dataRead): 
+						#found 
+							assets.pop(i)#Filter out the found
+							i-=1
+						i+=1
+				except:
+					#Someone checked in a page that was originally checked out in their folder and so the file cannot be found.
+					if xFile not in warningXML:
+						print("\tFile no longer exists:", xFile)
+						warningXML.append(xFile)
+				f.close()
+			else:
+				break
 		#extend unused files to the list of results
 		results[primaryFolder].unusedFiles.extend(assets)#update the dictionary for the folder
 	#Output results to an html file
