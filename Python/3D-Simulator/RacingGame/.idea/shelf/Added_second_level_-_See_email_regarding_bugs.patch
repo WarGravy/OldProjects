@@ -1,0 +1,33 @@
+Index: gameMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gameMgr.py	(revision 01a8098fb7eb8afb38342a7343774d148ba2f439)
++++ gameMgr.py	(revision )
+@@ -144,6 +144,7 @@
+                 self.gameFinished = True
+                 if self.player.place == 1:
+                     print "Congratulations! You won!"
++                    self.gameFinished = False
+                     self.currentLevel = self.levels[1]
+                     self.startGame2()
+                 else:
+Index: inputMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- inputMgr.py	(revision 01a8098fb7eb8afb38342a7343774d148ba2f439)
++++ inputMgr.py	(revision )
+@@ -124,6 +124,10 @@
+ 
+         # Start Screen selection logic
+         if self.engine.overlayMgr.currentSelected == "Start":
++            if self.keyboard.isKeyDown(OIS.KC_0) and self.toggle <= 0:
++                self.toggle = 0.25
++                self.engine.overlayMgr.count = 0
++                self.engine.overlayMgr.countDown()
+             if not self.engine.overlayMgr.showControls:
+                 if (self.keyboard.isKeyDown(OIS.KC_RETURN) or self.buttonPress) and self.engine.overlayMgr.selection == 1 and self.toggle <= 0:
+                     self.toggle = 0.25

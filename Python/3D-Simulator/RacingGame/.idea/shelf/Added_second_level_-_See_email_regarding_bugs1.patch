@@ -1,0 +1,18 @@
+Index: gameMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gameMgr.py	(revision 76c547f6bc9ac117ab40e79946d162b0e5aaae17)
++++ gameMgr.py	(revision )
+@@ -92,8 +92,8 @@
+     def startGame1(self):
+         print "Game Started"
+         self.currentState = self.states[1]
+-        if self.currentLevel != self.levels[0]:
+-            self.loadWaterLevel()
++        if self.currentLevel != self.levels[1]:
++            self.loadCityLevel()
+         #Select Player
+         self.engine.selectionMgr.selectPlayer()
+         #set the camera to behind the player

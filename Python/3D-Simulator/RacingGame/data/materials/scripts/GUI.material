@@ -1,0 +1,367 @@
+material GUI_Background
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture gameOverlay.png
+			}
+		}
+	}
+}
+
+material GUI_FlagTransparent
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture flagTransparent.png
+			}
+		}
+	}
+}
+
+material GUI_FlagCollected
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture flagCollected.png
+			}
+		}
+	}
+}
+
+material GUI_StartBackground
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_SplashBackground.png
+			}
+		}
+	}
+}
+
+material GUI_Gray_Border
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0.2 0.2 0.2
+			}
+		}
+	}
+}
+
+material GUI_Red_Border
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0.8 0.1 0.1
+			}
+		}
+	}
+}
+
+material Splash_Start_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_StartButton.png
+			}
+		}
+	}
+}
+
+material Splash_Credits_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_SplashCreditsButton.png
+			}
+		}
+	}
+}
+
+material Splash_Controls_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_SplashControls.png
+			}
+		}
+	}
+}
+
+material GUI_ControlsBackground
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_ControlsInfo.png
+			}
+		}
+	}
+}
+material GUI_Count5
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count5.png
+			}
+		}
+	}
+}
+material GUI_Count4
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count4.png
+			}
+		}
+	}
+}
+material GUI_Count3
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count3.png
+			}
+		}
+	}
+}
+material GUI_Count2
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count2.png
+			}
+		}
+	}
+}
+material GUI_Count1
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count1.png
+			}
+		}
+	}
+}
+material GUI_Count0
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Count0.png
+			}
+		}
+	}
+}
+material Game_Warning_Screen
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Warning.png
+			}
+		}
+	}
+}
+material Game_Winner_Screen
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Winner.png
+			}
+		}
+	}
+}
+material Game_Loser_Screen
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_Loser.png
+			}
+		}
+	}
+}
+
+material Level_Ocean_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_OceanButton.png
+			}
+		}
+	}
+}
+material Level_City_Button
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit
+			{
+				texture GUI_CityButton.png
+			}
+		}
+	}
+}

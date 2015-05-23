@@ -1,0 +1,391 @@
+Index: entityMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- entityMgr.py	(revision 4388b1373ceab41aaa8f60149b632dd1b9fb3fd0)
++++ entityMgr.py	(revision )
+@@ -19,7 +19,7 @@
+         pass
+ 
+     def init(self):
+-    	self.entTypes = [ent.CIGARETTE,]
++    	self.entTypes = [ent.PlayerDrone,]
+     	self.aiTypes = [ent.AIEnt, ]
+         pass
+ 
+Index: ent.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ent.py	(revision 4388b1373ceab41aaa8f60149b632dd1b9fb3fd0)
++++ ent.py	(revision )
+@@ -7,6 +7,7 @@
+ #######
+ # Entity class to hold information about entities for 38Engine
+ # Sushil Louis
++import ogre.renderer.OGRE as ogre
+ 
+ from vector import Vector3
+ from physics import Physics
+@@ -16,7 +17,7 @@
+ class Entity:
+     aspectTypes = [Physics, Renderable]
+     
+-    def __init__(self, id, pos = Vector3(0,100,0), mesh = 'robot.mesh', vel = Vector3(0, 0, 0), yaw = 0, isAI = False):
++    def __init__(self, id, pos = Vector3(0,100,0), mesh = 'robot.mesh', vel = Vector3(0, 0, 0), yaw = 0, orientation = ogre.Quaternion(0, 0, 0, 1), isAI = False):
+         self.eid = id
+         self.pos = pos
+         self.vel = vel
+@@ -24,7 +25,8 @@
+         self.yaw = yaw
+         self.node = None
+         self.deltaSpeed = 5
+-        self.deltaYaw   = 0.8
++        self.deltaYaw = 0.8
++        self.deltaPitch = 0.8
+         self.speed = 0.0
+         self.heading = 0.0
+         self.isAI = isAI
+@@ -39,6 +41,10 @@
+         self.initAspects()
+         self.uiname = "Basic Entity"
+ 
++        # Orientation tilt quaternion
++        self.orientation = ogre.Quaternion()
++        self.orientation.FromAngleAxis(ogre.Degree(0), Vector3(0, 0, 1))
++
+     def initAspects(self):
+         for aspType in self.aspectTypes:
+             self.aspects.append(aspType(self))
+@@ -53,14 +59,14 @@
+         x = "Entity: %s \nPos: %s, Vel: %s,  mesh = %s\nSpeed: %f, Heading: %f" % (self.eid, str(self.pos), str(self.vel), self.mesh, self.speed, self.heading)
+         return x
+ 
+-class CIGARETTE(Entity): # General settings. Other Drone stats can be modified from this.
+-    def __init__(self, id, pos = Vector3(0,0,0), vel = Vector3(0, 0, 0), yaw = 0, isAI = False):
++class PlayerDrone(Entity): # General settings. Other Drone stats can be modified from this.
++    def __init__(self, id, pos = Vector3(0,0,0), vel = Vector3(0, 0, 0), yaw = 0, orientation = ogre.Quaternion(0, 0, 0, 1), isAI = False):
+         Entity.__init__(self, id, pos = pos, vel = vel, yaw = yaw, isAI = isAI)
+         self.mesh = 'EnemyFighter.mesh'
+-        self.uiname = 'CIGARETTE'
++        self.uiname = 'PLAYER'
+         self.acceleration  = 80 # Changed by Sara for better drone speed
+         self.drift = 2 # Added by Sara. The speed at which an entity slows down after after acceleration (or reverse) key is no longer being pushed.
+-        self.turningRate   = .0001 # Changed by Sara for better drone
++        self.turningRate   = .0002 # Changed by Sara for better drone
+         self.climbingSpeed = .009 # Added by Sara. Speed at which drone can go up
+         self.maxSpeed = 200 # Changed by Sara for better drone speed
+         self.desiredSpeed = 0
+@@ -68,6 +74,10 @@
+         self.speed = 0
+         self.heading = 0
+         self.height = 0 # Added by Sara. For 3D physics
++
++        # Orientation tilt quaternion
++        self.orientation = ogre.Quaternion()
++        self.orientation.FromAngleAxis(ogre.Degree(0), Vector3(0, 0, 1))
+ 
+ class AIEnt(Entity):
+     def __init__(self, id, pos = Vector3(0,0,0), vel = Vector3(0, 0, 0), yaw = 0, isAI = True):
+Index: controlMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- controlMgr.py	(revision 4388b1373ceab41aaa8f60149b632dd1b9fb3fd0)
++++ controlMgr.py	(revision )
+@@ -12,7 +12,7 @@
+ #    desiredHeading.
+ import ogre.io.OIS as OIS
+ import ogre.renderer.OGRE as ogre
+-import pygame
++
+ from vector import Vector3
+ 
+ class ControlMgr:
+@@ -25,19 +25,8 @@
+         self.selMgr = self.engine.selectionMgr
+         self.keyboard = self.engine.inputMgr.keyboard
+         self.toggle = 0.0
++        pass
+ 
+-	# Init joystick
+-	pygame.init()
+-	pygame.joystick.init()
+-	if (pygame.joystick.get_count() > 0):
+-	    self.isJoystick = True
+-            self.joystick = pygame.joystick.Joystick(0)
+-            self.joystick.init()
+-	    print "Joystick detected"
+-	else:
+-	    self.isJoystick = False
+-	    print "No joy detected. Use keyboard commands."
+-
+     def tick(self, dt):
+     	# Update the toggle timer.
+         if self.toggle >= 0:
+@@ -50,92 +39,54 @@
+             for selectedEnt in entList:
+                 #change desired speed and current direction
+                 #------------------------------------------
+-
+-		if self.isJoystick and selectedEnt.isAI == False: # if gamepad is attached
+-		    pygame.event.get() # For joystick control
+-
+-                    # Speed Up
++                # Speed Up
+-    		    if self.joystick.get_button(0): # If A button is pressed
+-                        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.deltaSpeed, 0, selectedEnt.maxSpeed)
+-
+-                    # Slow down # Changed by Sara 
+-        	    elif self.joystick.get_button(1): # If B button is pressed
+-                        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.deltaSpeed, -90, selectedEnt.maxSpeed) 
+- 
+-                    # Drift # Added by Sara to make Ents drift to a stop
+-                    elif selectedEnt.speed != 0:
+-                        if selectedEnt.speed > 0:
+-                            selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.drift, 0, selectedEnt.maxSpeed)
+-		            if selectedEnt.speed < 0:
+-		                selectedEnt.desiredSpeed = 0
+-		        elif selectedEnt.speed < 0:
+-		            selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.drift, -90, 0)
+-		            if selectedEnt.speed > 0:
+-		                selectedEnt.desiredSpeed = 0
+-
+-                    # Turn Left.
+-		    if self.joystick.get_axis(0) < -.25:
+-		        selectedEnt.heading += selectedEnt.turningRate * (selectedEnt.speed / 3 ) * (self.joystick.get_axis(0) * -1)
+-
+-                    # Turn Right.
+-                    if self.joystick.get_axis(0) > .25:
+-		        selectedEnt.heading -= selectedEnt.turningRate * (selectedEnt.speed / 3 ) * self.joystick.get_axis(0)
+-		
+-                    # Fly up. Added by Sara
+-                    if self.joystick.get_axis(1) < -.25:
+-		        if selectedEnt.height < 900: # Keep it from going too high
+-		            selectedEnt.height += selectedEnt.climbingSpeed * (selectedEnt.speed / 2 ) * (self.joystick.get_axis(1) * -1) # Can't fly up if not moving.
+-		            selectedEnt.pos.y = selectedEnt.height
+-		           
+-                    # Fly down. Added by Sara
+-                    if self.joystick.get_axis(1) > .25 and selectedEnt.speed > 0:
+-		        if selectedEnt.height > 10: # Keep it from going too low
+-		            selectedEnt.height -= selectedEnt.climbingSpeed * selectedEnt.speed * self.joystick.get_axis(1)# Can't fly down if not moving.
+-		            selectedEnt.pos.y = selectedEnt.height
+-			
+-		elif self.isJoystick == False or selectedEnt.isAI == True:
+-                    # Speed Up
+-                    if  (self.keyboard.isKeyDown(OIS.KC_UP) and selectedEnt.isAI == False) or selectedEnt.AI_FORWARD:
+-                        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.deltaSpeed, 0, selectedEnt.maxSpeed)
++                if  (self.keyboard.isKeyDown(OIS.KC_UP) and selectedEnt.isAI == False) or selectedEnt.AI_FORWARD:
++                    selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.deltaSpeed, 0, selectedEnt.maxSpeed)
++                    #print "Speeding UP", selectedEnt.speed
+ 
+-                    # Slow down
++                # Slow down # Changed by Sara
+-                    elif (self.keyboard.isKeyDown(OIS.KC_DOWN)  and selectedEnt.isAI == False) or selectedEnt.AI_REVERSE:
++                elif  (self.keyboard.isKeyDown(OIS.KC_DOWN)  and selectedEnt.isAI == False) or selectedEnt.AI_REVERSE:
+-                        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.deltaSpeed, -90, selectedEnt.maxSpeed) #Sara added a reverse
++                    selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.deltaSpeed, -90, selectedEnt.maxSpeed) #Sara added a reverse
++                    #print "Slowing down", selectedEnt.speed
+ 
+-                    # Drift # Added by Sara to make Ents drift to a stop
+-                    elif selectedEnt.speed != 0:
+-                        if selectedEnt.speed > 0:
+-                            selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.drift, 0, selectedEnt.maxSpeed)
+-		            if selectedEnt.speed < 0:
+-		                selectedEnt.desiredSpeed = 0
+-		        elif selectedEnt.speed < 0:
+-		            selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.drift, -90, 0)
+-		            if selectedEnt.speed > 0:
+-		                selectedEnt.desiredSpeed = 0
++                # Drift # Added by Sara to make Ents drift to a stop
++                elif selectedEnt.speed != 0:
++                    if selectedEnt.speed > 0:
++                        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed - selectedEnt.drift, 0, selectedEnt.maxSpeed)
++		        if selectedEnt.speed < 0:
++		            selectedEnt.desiredSpeed = 0
++		    elif selectedEnt.speed < 0:
++		        selectedEnt.desiredSpeed = utils.clamp(selectedEnt.desiredSpeed + selectedEnt.drift, -90, 0)
++		        if selectedEnt.speed > 0:
++		            selectedEnt.desiredSpeed = 0
++		    #print "Drifting", selectedEnt.speed
+-		    
+-                    # Turn Left.
+-                    if  (self.keyboard.isKeyDown(OIS.KC_LEFT)  and selectedEnt.isAI == False) or selectedEnt.AI_LEFT:
++
++                # Turn Left.
++                if  (self.keyboard.isKeyDown(OIS.KC_LEFT)  and selectedEnt.isAI == False) or selectedEnt.AI_LEFT:
+-                        selectedEnt.heading += selectedEnt.turningRate * (selectedEnt.speed / 3 )
++		    selectedEnt.heading += selectedEnt.turningRate * (selectedEnt.speed / 3 ) # Turning is a function of speed so you can't turn when not moving. Changed by Sara
++                    #print "Turn left", selectedEnt.heading
+ 
+-                    # Turn Right.
+-                    if  (self.keyboard.isKeyDown(OIS.KC_RIGHT) and selectedEnt.isAI == False) or selectedEnt.AI_RIGHT:
+-                        selectedEnt.heading -= selectedEnt.turningRate * (selectedEnt.speed / 3 )
++                # Turn Right.
++                if  (self.keyboard.isKeyDown(OIS.KC_RIGHT) and selectedEnt.isAI == False) or selectedEnt.AI_RIGHT:
++		    selectedEnt.heading -= selectedEnt.turningRate * (selectedEnt.speed / 3 )
++                    #print "Turn right", selectedEnt.heading
+-		
+-		    # Fly up. Added by Sara
+-                    if (selectedEnt.isAI == False and self.keyboard.isKeyDown(OIS.KC_R) and selectedEnt.speed > 0) or (selectedEnt.AI_UP and selectedEnt.speed > 0):
+-		        if selectedEnt.height < 900: # Keep it from going too high
+-		            selectedEnt.height += selectedEnt.climbingSpeed * (selectedEnt.speed / 2 ) # Can't fly up if not moving.
+-		            selectedEnt.pos.y = selectedEnt.height
++
++		# Fly up. Added by Sara
++		if (selectedEnt.isAI == False and self.keyboard.isKeyDown(OIS.KC_R) and selectedEnt.speed > 0) or (selectedEnt.AI_UP and selectedEnt.speed > 0):
++		    if selectedEnt.height < 900: # Keep it from going too high
++		        selectedEnt.height += selectedEnt.climbingSpeed * (selectedEnt.speed / 2 ) # Can't fly up if not moving.
++		        selectedEnt.pos.y = selectedEnt.height
++		        #print "Climbing", selectedEnt.height
+-		       
+-		    # Fly down. Added by Sara
+-    		    if (selectedEnt.isAI == False and self.keyboard.isKeyDown(OIS.KC_F) and selectedEnt.speed > 0) or (selectedEnt.AI_DOWN and selectedEnt.speed > 0):
++
++		# Fly down. Added by Sara
++		if (selectedEnt.isAI == False and self.keyboard.isKeyDown(OIS.KC_F) and selectedEnt.speed > 0) or (selectedEnt.AI_DOWN and selectedEnt.speed > 0):
+-     		        if selectedEnt.height > 10: # Keep it from going too low
++		    if selectedEnt.height > 0: # Keep it from going too low
+-		            selectedEnt.height -= selectedEnt.climbingSpeed * selectedEnt.speed # Can't fly down if not moving.
+-		            selectedEnt.pos.y = selectedEnt.height
++		        selectedEnt.height -= selectedEnt.climbingSpeed * selectedEnt.speed # Can't fly down if not moving.
++		        selectedEnt.pos.y = selectedEnt.height
+-			
++			#print "Falling", selectedEnt.height
+-		if self.toggle < 0:
+-                    toggle = 0.2
++            if self.toggle < 0:
++                toggle = 0.2
++        pass
+ 
+     def stop(self):
+-	pygame.joystick.quit()
+         pass
+Index: inputMgr.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- inputMgr.py	(revision 4388b1373ceab41aaa8f60149b632dd1b9fb3fd0)
++++ inputMgr.py	(revision )
+@@ -11,7 +11,6 @@
+ import ogre.io.OIS as OIS
+ import platform
+ from vector import Vector3
+-import pygame
+ 
+ class InputMgr():
+     def __init__(self, engine):
+@@ -21,16 +20,6 @@
+         self.rotate = 0.13
+         self.renderWindow = engine.gfxMgr.root.getAutoCreatedWindow()
+         self.toggle = 0.0
+-	# Init joystick
+-	pygame.init()
+-	pygame.joystick.init()
+-	if (pygame.joystick.get_count() > 0):
+-	    self.isJoystick = True
+-            self.joystick = pygame.joystick.Joystick(0)
+-            self.joystick.init()
+-	else:
+-	    self.isJoystick = False
+-	self.buttonPress = False
+ 
+     def initKeyStates(self):
+         #selection manager
+@@ -51,7 +40,7 @@
+         self.PRIOR_PGUP = False
+         self.CURRENT_PGDN = False
+         self.PRIOR_PGDN = False
+-        
++
+     def updateCamNode(self):
+         self.camNode = self.engine.gfxMgr.camera.parentSceneNode.parentSceneNode
+     def init(self):
+@@ -86,34 +75,26 @@
+         #TAB KEY
+         self.PRIOR_TAB = self.CURRENT_TAB
+         self.toggle -= dt
+-	#JOYSTICK
+-	if self.isJoystick:
+-            for event in pygame.event.get():
+-	        if event.type == pygame.JOYBUTTONDOWN: #if any button is pressed
+-	            self.buttonPress = True
+ 
+         # Start Screen selection logic
+         if self.engine.overlayMgr.currentSelected == "Start":
+             if not self.engine.overlayMgr.showControls:
+-                if (self.keyboard.isKeyDown(OIS.KC_RETURN) or self.buttonPress) and self.engine.overlayMgr.selection == 1 and self.toggle <= 0:
++                if self.keyboard.isKeyDown(OIS.KC_RETURN) and self.engine.overlayMgr.selection == 1 and self.toggle <= 0:
+                     self.toggle = 0.25
+                     self.engine.overlayMgr.setDisplay("Status")
+                     self.engine.gameMgr.startGame1()
+-		    self.buttonPress = False
+-                if (self.keyboard.isKeyDown(OIS.KC_RETURN) or self.buttonPress) and self.engine.overlayMgr.selection == 0 and self.toggle <= 0:
++                if self.keyboard.isKeyDown(OIS.KC_RETURN) and self.engine.overlayMgr.selection == 0 and self.toggle <= 0:
+                     self.toggle = 0.25
+                     self.engine.overlayMgr.showControls = True
+-		    self.buttonPress = False
+-                if (self.keyboard.isKeyDown(OIS.KC_RIGHT) or (self.isJoystick and (self.joystick.get_axis(0) > .25 or self.joystick.get_axis(3) > .25 or self.joystick.get_hat(0) > (.25,-1)))) and self.toggle <= 0:
++                if self.keyboard.isKeyDown(OIS.KC_RIGHT) and self.toggle <= 0:
+                     self.toggle = 0.25
+                     self.engine.overlayMgr.selection = (self.engine.overlayMgr.selection + 1) % 2
+-                if (self.keyboard.isKeyDown(OIS.KC_LEFT) or (self.isJoystick and (self.joystick.get_axis(0) < -.25 or self.joystick.get_axis(3) < -.25 or self.joystick.get_hat(0) < (-.25, 1)))) and self.toggle <= 0:
++                if self.keyboard.isKeyDown(OIS.KC_LEFT) and self.toggle <= 0:
+                     self.toggle = 0.25
+                     self.engine.overlayMgr.selection = (self.engine.overlayMgr.selection + 1) % 2
+-            elif (self.keyboard.isKeyDown(OIS.KC_RETURN) or self.buttonPress) and self.toggle <= 0:
++            elif self.keyboard.isKeyDown(OIS.KC_RETURN) and self.toggle <= 0:
+                 self.toggle = 0.25
+                 self.engine.overlayMgr.showControls = False
+-		self.buttonPress = False
+ 
+         if self.keyboard.isKeyDown(OIS.KC_TAB):
+             self.CURRENT_TAB = True
+@@ -125,7 +106,6 @@
+             self.CURRENT_LClick = True
+         else:
+             self.CURRENT_LClick = False
+-
+         # Move the camera using keyboard input.
+         transVector = Vector3(0.0,0.0,0.0)
+         # Move Forward.
+@@ -177,4 +157,4 @@
+         self.inputManager.destroyInputObjectKeyboard(self.keyboard)
+         self.inputManager.destroyInputObjectMouse(self.mouse)
+         OIS.InputManager.destroyInputSystem(self.inputManager)
+-        self.inputManager = None
++        self.inputManager = None
+\ No newline at end of file
+Index: physics.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- physics.py	(revision 4388b1373ceab41aaa8f60149b632dd1b9fb3fd0)
++++ physics.py	(revision )
+@@ -8,7 +8,7 @@
+ # vel is rate of change of pos
+ # Sushil Louis
+ 
+-from vector import Vector3
++import ogre.renderer.OGRE as ogre
+ import utils
+ import math
+ 
+@@ -34,3 +34,11 @@
+         dheading = utils.clamp(angleDiff, -timeScaledRotation, timeScaledRotation)
+ 
+         self.ent.heading += dheading
++
++        #-----------Tilting Mechanics-------------------------
++        tilt = ogre.Quaternion()
++        tilt.FromAngleAxis((self.ent.deltaYaw * self.ent.turningRate) * dtime, ogre.Vector3(0, 1, 0))
++        self.ent.orientation *= tilt
++
++        tilt.FromAngleAxis((self.ent.deltaPitch * self.ent.turningRate) * dtime, ogre.Vector3(1, 0, 0))
++        self.ent.orientation *= tilt
+\ No newline at end of file
